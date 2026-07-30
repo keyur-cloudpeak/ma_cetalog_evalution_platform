@@ -1339,9 +1339,13 @@
        SCREEN RENDERERS
        ============================================================ */
 
-    function navButtons() {
+    function navButtons(nextDisabled) {
       const back = state.screen > 1 ? `<button class="btn secondary" onclick="goScreen(${state.screen - 1})">&larr; Back</button>` : `<span></span>`;
-      const next = state.screen < 9 ? `<button class="btn" onclick="goScreen(${state.screen + 1})">Next &rarr;</button>` : `<span></span>`;
+      let next = `<span></span>`;
+      if (state.screen < 9) {
+        const dis = nextDisabled ? ' disabled title="Please fill in the required field to continue"' : '';
+        next = `<button class="btn"${dis} onclick="goScreen(${state.screen + 1})">Next &rarr;</button>`;
+      }
       return `<div class="nav-row">${back}<div class="spacer">${SCREENS[state.screen - 1].label}</div>${next}</div>`;
     }
 
@@ -1356,13 +1360,13 @@
       if (mode === "Artist") {
         const opts = DATA.catalog_options.artists.map(a => `<option value="${esc(a)}"></option>`).join("");
         searchField = `<div class="field"><label class="field-label" style="text-align:left;">Artist Name</label>
-      <input type="text" id="searchTermSel" list="artistList" value="${esc(state.searchTerm)}" placeholder="Type to search artists..." autocomplete="off" onchange="dispatchSearch()" style="font-size:1.15rem; padding:14px; border-radius:12px;">
+      <input type="text" id="searchTermSel" list="artistList" value="${esc(state.searchTerm)}" placeholder="Type to search artists..." autocomplete="off" oninput="dispatchSearch()" onchange="dispatchSearch()" style="font-size:1.15rem; padding:14px; border-radius:12px;">
       <datalist id="artistList">${opts}</datalist>
     </div>`;
       } else if (mode === "Label") {
         const opts = DATA.catalog_options.labels.map(a => `<option value="${esc(a)}"></option>`).join("");
         searchField = `<div class="field"><label class="field-label" style="text-align:left;">Label Name</label>
-      <input type="text" id="searchTermSel" list="labelList" value="${esc(state.searchTerm)}" placeholder="Type to search labels..." autocomplete="off" onchange="dispatchSearch()" style="font-size:1.15rem; padding:14px; border-radius:12px;">
+      <input type="text" id="searchTermSel" list="labelList" value="${esc(state.searchTerm)}" placeholder="Type to search labels..." autocomplete="off" oninput="dispatchSearch()" onchange="dispatchSearch()" style="font-size:1.15rem; padding:14px; border-radius:12px;">
       <datalist id="labelList">${opts}</datalist>
     </div>`;
       } else {
@@ -1383,6 +1387,11 @@
         ["Corporate Valuation", "Inputs for the Corporate model"],
       ];
 
+      // Next is allowed only when the user has provided a search value
+      const screen1CanNext = mode === "ISRC List"
+        ? !!state.uploadedFile
+        : !!(state.searchTerm && state.searchTerm.trim());
+
       return `
     ${stepMeta(1, "Select Catalog")}
     ${sectionTitle("Select Catalog", "Identify the catalog to be evaluated by artist, label, or an uploaded ISRC list.")}
@@ -1399,7 +1408,7 @@
     <div class="grid grid-4">
       ${objectives.map(([t, d]) => `<div class="card"><div class="kpi-label">${esc(t)}</div><div class="card-body-text">${esc(d)}</div></div>`).join("")}
     </div>
-    ${navButtons()}
+    ${navButtons(!screen1CanNext)}
   `;
     }
     function setSearchMode(m) { state.searchMode = m; state.uploadedFile = null; state.searchTerm = ""; render(); }
@@ -1414,7 +1423,8 @@
       const sel = document.getElementById("searchTermSel");
       if (sel) state.searchTerm = sel.value;
       state.resolvedEntities = [];
-      toast("Searching local catalog JSON data...");
+      renderKeepScroll();  // re-evaluate Next button disabled state
+      if (state.searchTerm && state.searchTerm.trim()) toast("Searching local catalog JSON data...");
     }
 
     /* ---- SCREEN 2 : RESOLVE AMBIGUITY ---- */
