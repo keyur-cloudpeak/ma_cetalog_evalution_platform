@@ -1113,7 +1113,7 @@
         </div>
       </div>
       <button class="theme-toggle" id="themeToggle">
-        <span id="themeLabel">DARK</span>
+        <span id="themeLabel">LIGHT</span>
         <span class="toggle-track"><span class="toggle-thumb" id="toggleThumb"></span></span>
       </button>
     </header>
@@ -1170,7 +1170,7 @@
 
     const state = {
       screen: 1,
-      theme: "dark",
+      theme: "light",
       searchMode: "Label",
       searchTerm: "",
       resolvedEntity: null,
@@ -1944,14 +1944,19 @@
     function setTheme(t) {
       state.theme = t;
       document.documentElement.setAttribute("data-theme", t);
-      $("#themeLabel").textContent = t.toUpperCase();
+      // Label shows the mode you will switch TO on next click
+      $("#themeLabel").textContent = t === "dark" ? "LIGHT" : "DARK";
+      localStorage.setItem("wb_theme", t);
     }
     $("#themeToggle").addEventListener("click", () => {
       setTheme(state.theme === "dark" ? "light" : "dark");
     });
 
     /* ---- Init ---- */
-    setTheme(state.theme);
+    // Restore saved preference; fall back to "light" (the default)
+    const savedTheme = localStorage.getItem("wb_theme") || "light";
+    state.theme = savedTheme;
+    setTheme(savedTheme);
     render();
 
   </script>
