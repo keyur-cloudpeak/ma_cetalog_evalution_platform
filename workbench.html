@@ -390,9 +390,20 @@
     /* ---------- TAB BAR ---------- */
     .tabbar {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 9px;
       margin-bottom: 26px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .tabbar::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .tabbar::-webkit-scrollbar-thumb {
+      background: rgba(20, 18, 14, 0.15);
+      border-radius: 999px;
     }
 
     .tab-pill {
@@ -411,6 +422,7 @@
       gap: 8px;
       transition: all .18s ease;
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .tab-pill:hover {
@@ -1160,9 +1172,6 @@
 
     <div class="meta-row">
       <div class="meta-right">
-        <span id="todayDate">2026-07-30</span>
-        <span class="dot-sep">&bull;</span>
-        <span class="entity-chip" id="entityChipTop">CHI RECORDS</span>
       </div>
     </div>
 
@@ -1950,19 +1959,13 @@
     function renderTicker() {
       const entity = state.resolvedEntity || state.searchTerm;
       const items = [
-        `<span class="ticker-item"><span class="ticker-tag tk-live">LIVE</span> Session &middot; <b>${esc(entity)}</b></span>`,
-        `<span class="ticker-item"><span class="ticker-tag tk-step">STEP ${state.screen}/8</span> ${esc(SCREENS[state.screen - 1].label)}</span>`,
-        `<span class="ticker-item">Local Territories &middot; <b>${state.localTerritories.length}</b> selected</span>`,
-        `<span class="ticker-item"><span class="ticker-tag tk-note">ASSUMPTION</span> Growth <b>${state.expectedGrowth}%</b> / Decay <b>${state.expectedDecay}%</b></span>`,
-        `<span class="ticker-item">Albums in Scope &middot; <b>${DATA.albums.filter(a => state.includedAlbums[a.album_id]).length}</b> of ${DATA.albums.length}</span>`,
-        `<span class="ticker-item">Market Growth Index &middot; <b>${Math.round(DATA.market_growth.artist_growth_pct / DATA.market_growth.market_growth_pct * 100)}%</b></span>`,
       ];
       const seq = items.join(`<span style="opacity:.3">&#9670;</span>`);
       $("#tickerTrack").innerHTML = seq + `<span style="opacity:.3">&#9670;</span>` + seq;
     }
 
     function renderMeta() {
-      $("#entityChipTop").textContent = (state.resolvedEntity || state.searchTerm).toUpperCase();
+      // Entity chip removed from UI.
     }
 
     function render() {
