@@ -2,96 +2,96 @@
   {
     "track_id": "NR001",
     "track_name": "New Release Track 1",
-    "release_year": 2024,
-    "first_12m_streams_millions": 5.23,
+    "release_year": 2020,
+    "first_12m_streams_millions": 1.66,
     "months_of_data": 12,
-    "flag": "Outlier"
+    "flag": null
   },
   {
     "track_id": "NR002",
     "track_name": "New Release Track 2",
-    "release_year": 2022,
-    "first_12m_streams_millions": 2.1,
-    "months_of_data": 6,
-    "flag": "Collaboration"
+    "release_year": 2020,
+    "first_12m_streams_millions": 0.92,
+    "months_of_data": 12,
+    "flag": null
   },
   {
     "track_id": "NR003",
     "track_name": "New Release Track 3",
-    "release_year": 2021,
-    "first_12m_streams_millions": 2.77,
-    "months_of_data": 12,
+    "release_year": 2022,
+    "first_12m_streams_millions": 3.07,
+    "months_of_data": 6,
     "flag": null
   },
   {
     "track_id": "NR004",
     "track_name": "New Release Track 4",
     "release_year": 2024,
-    "first_12m_streams_millions": 2.22,
-    "months_of_data": 9,
-    "flag": null
-  },
-  {
-    "track_id": "NR005",
-    "track_name": "New Release Track 5",
-    "release_year": 2020,
-    "first_12m_streams_millions": 3.42,
-    "months_of_data": 12,
-    "flag": "Outlier"
-  },
-  {
-    "track_id": "NR006",
-    "track_name": "New Release Track 6",
-    "release_year": 2021,
-    "first_12m_streams_millions": 3.63,
-    "months_of_data": 12,
-    "flag": null
-  },
-  {
-    "track_id": "NR007",
-    "track_name": "New Release Track 7",
-    "release_year": 2020,
-    "first_12m_streams_millions": 4.73,
-    "months_of_data": 9,
-    "flag": null
-  },
-  {
-    "track_id": "NR008",
-    "track_name": "New Release Track 8",
-    "release_year": 2023,
-    "first_12m_streams_millions": 1.94,
-    "months_of_data": 12,
-    "flag": "Collaboration"
-  },
-  {
-    "track_id": "NR009",
-    "track_name": "New Release Track 9",
-    "release_year": 2024,
-    "first_12m_streams_millions": 1.24,
+    "first_12m_streams_millions": 3.19,
     "months_of_data": 9,
     "flag": "Duplicate"
   },
   {
-    "track_id": "NR010",
-    "track_name": "New Release Track 10",
+    "track_id": "NR005",
+    "track_name": "New Release Track 5",
     "release_year": 2023,
     "first_12m_streams_millions": 1.77,
     "months_of_data": 6,
     "flag": null
   },
   {
-    "track_id": "NR011",
-    "track_name": "New Release Track 11",
+    "track_id": "NR006",
+    "track_name": "New Release Track 6",
     "release_year": 2023,
     "first_12m_streams_millions": 1.05,
     "months_of_data": 12,
     "flag": "Duplicate"
   },
   {
-    "track_id": "NR012",
-    "track_name": "New Release Track 12",
+    "track_id": "NR007",
+    "track_name": "New Release Track 7",
     "release_year": 2020,
     "first_12m_streams_millions": 2.57,
+    "months_of_data": 12,
+    "flag": null
+  },
+  {
+    "track_id": "NR008",
+    "track_name": "New Release Track 8",
+    "release_year": 2022,
+    "first_12m_streams_millions": 2.53,
+    "months_of_data": 12,
+    "flag": null
+  },
+  {
+    "track_id": "NR009",
+    "track_name": "New Release Track 9",
+    "release_year": 2024,
+    "first_12m_streams_millions": 1.52,
+    "months_of_data": 6,
+    "flag": null
+  },
+  {
+    "track_id": "NR010",
+    "track_name": "New Release Track 10",
+    "release_year": 2022,
+    "first_12m_streams_millions": 2.63,
+    "months_of_data": 6,
+    "flag": null
+  },
+  {
+    "track_id": "NR011",
+    "track_name": "New Release Track 11",
+    "release_year": 2020,
+    "first_12m_streams_millions": 4.8,
+    "months_of_data": 6,
+    "flag": "Incomplete Data"
+  },
+  {
+    "track_id": "NR012",
+    "track_name": "New Release Track 12",
+    "release_year": 2024,
+    "first_12m_streams_millions": 4.73,
     "months_of_data": 12,
     "flag": null
   }

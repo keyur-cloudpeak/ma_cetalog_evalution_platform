@@ -37,5 +37,232 @@
       "track_count": 8,
       "recommended": false
     }
+  ],
+  "Karol G": [
+    {
+      "id": "ART005",
+      "name": "Karol G",
+      "confidence": "High",
+      "track_count": 213,
+      "recommended": true
+    },
+    {
+      "id": "ART006",
+      "name": "Karol G ft.",
+      "confidence": "Low",
+      "track_count": 12,
+      "recommended": false
+    }
+  ],
+  "Bad Bunny": [
+    {
+      "id": "ART007",
+      "name": "Bad Bunny",
+      "confidence": "High",
+      "track_count": 56,
+      "recommended": true
+    },
+    {
+      "id": "ART008",
+      "name": "Bad Bunny ft.",
+      "confidence": "Low",
+      "track_count": 22,
+      "recommended": false
+    }
+  ],
+  "Harry Styles": [
+    {
+      "id": "ART009",
+      "name": "Harry Styles",
+      "confidence": "High",
+      "track_count": 112,
+      "recommended": true
+    },
+    {
+      "id": "ART010",
+      "name": "Harry Styles ft.",
+      "confidence": "Low",
+      "track_count": 19,
+      "recommended": false
+    }
+  ],
+  "Camila Cabello": [
+    {
+      "id": "ART011",
+      "name": "Camila Cabello",
+      "confidence": "High",
+      "track_count": 85,
+      "recommended": true
+    },
+    {
+      "id": "ART012",
+      "name": "Camila Cabello ft.",
+      "confidence": "Low",
+      "track_count": 11,
+      "recommended": false
+    }
+  ],
+  "Manuel Turizo": [
+    {
+      "id": "ART013",
+      "name": "Manuel Turizo",
+      "confidence": "High",
+      "track_count": 223,
+      "recommended": true
+    },
+    {
+      "id": "ART014",
+      "name": "Manuel Turizo ft.",
+      "confidence": "Low",
+      "track_count": 39,
+      "recommended": false
+    }
+  ],
+  "Rauw Alejandro": [
+    {
+      "id": "ART015",
+      "name": "Rauw Alejandro",
+      "confidence": "High",
+      "track_count": 72,
+      "recommended": true
+    },
+    {
+      "id": "ART016",
+      "name": "Rauw Alejandro ft.",
+      "confidence": "Low",
+      "track_count": 42,
+      "recommended": false
+    }
+  ],
+  "Sebastian Yatra": [
+    {
+      "id": "ART017",
+      "name": "Sebastian Yatra",
+      "confidence": "High",
+      "track_count": 158,
+      "recommended": true
+    },
+    {
+      "id": "ART018",
+      "name": "Sebastian Yatra ft.",
+      "confidence": "Low",
+      "track_count": 7,
+      "recommended": false
+    }
+  ],
+  "RCA Records": [
+    {
+      "id": "LBL007",
+      "name": "RCA Records",
+      "confidence": "High",
+      "track_count": 115,
+      "recommended": true
+    },
+    {
+      "id": "LBL008",
+      "name": "RCA Records MC",
+      "confidence": "Medium",
+      "track_count": 31,
+      "recommended": false
+    },
+    {
+      "id": "LBL009",
+      "name": "RCA Records Power",
+      "confidence": "Low",
+      "track_count": 11,
+      "recommended": false
+    }
+  ],
+  "Columbia Records": [
+    {
+      "id": "LBL010",
+      "name": "Columbia Records",
+      "confidence": "High",
+      "track_count": 219,
+      "recommended": true
+    },
+    {
+      "id": "LBL011",
+      "name": "Columbia Records MC",
+      "confidence": "Medium",
+      "track_count": 84,
+      "recommended": false
+    },
+    {
+      "id": "LBL012",
+      "name": "Columbia Records Power",
+      "confidence": "Low",
+      "track_count": 24,
+      "recommended": false
+    }
+  ],
+  "Arista Records": [
+    {
+      "id": "LBL013",
+      "name": "Arista Records",
+      "confidence": "High",
+      "track_count": 113,
+      "recommended": true
+    },
+    {
+      "id": "LBL014",
+      "name": "Arista Records MC",
+      "confidence": "Medium",
+      "track_count": 45,
+      "recommended": false
+    },
+    {
+      "id": "LBL015",
+      "name": "Arista Records Power",
+      "confidence": "Low",
+      "track_count": 27,
+      "recommended": false
+    }
+  ],
+  "Nashville West Records": [
+    {
+      "id": "LBL016",
+      "name": "Nashville West Records",
+      "confidence": "High",
+      "track_count": 432,
+      "recommended": true
+    },
+    {
+      "id": "LBL017",
+      "name": "Nashville West Records MC",
+      "confidence": "Medium",
+      "track_count": 89,
+      "recommended": false
+    },
+    {
+      "id": "LBL018",
+      "name": "Nashville West Records Power",
+      "confidence": "Low",
+      "track_count": 18,
+      "recommended": false
+    }
+  ],
+  "Sony Music Latin": [
+    {
+      "id": "LBL019",
+      "name": "Sony Music Latin",
+      "confidence": "High",
+      "track_count": 212,
+      "recommended": true
+    },
+    {
+      "id": "LBL020",
+      "name": "Sony Music Latin MC",
+      "confidence": "Medium",
+      "track_count": 77,
+      "recommended": false
+    },
+    {
+      "id": "LBL021",
+      "name": "Sony Music Latin Power",
+      "confidence": "Low",
+      "track_count": 23,
+      "recommended": false
+    }
   ]
 }

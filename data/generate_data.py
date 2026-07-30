@@ -36,6 +36,21 @@ ambiguity_matches = {
         {"id": "ART002", "name": "Shakira ft.", "confidence": "Low", "track_count": 8, "recommended": False},
     ],
 }
+
+for i, artist in enumerate(catalog_options["artists"]):
+    if artist not in ambiguity_matches:
+        ambiguity_matches[artist] = [
+            {"id": f"ART{(i*2+3):03d}", "name": artist, "confidence": "High", "track_count": random.randint(50, 300), "recommended": True},
+            {"id": f"ART{(i*2+4):03d}", "name": f"{artist} ft.", "confidence": "Low", "track_count": random.randint(5, 50), "recommended": False},
+        ]
+
+for i, label in enumerate(catalog_options["labels"]):
+    if label not in ambiguity_matches:
+        ambiguity_matches[label] = [
+            {"id": f"LBL{(i*3+4):03d}", "name": label, "confidence": "High", "track_count": random.randint(100, 600), "recommended": True},
+            {"id": f"LBL{(i*3+5):03d}", "name": f"{label} MC", "confidence": "Medium", "track_count": random.randint(20, 90), "recommended": False},
+            {"id": f"LBL{(i*3+6):03d}", "name": f"{label} Power", "confidence": "Low", "track_count": random.randint(5, 30), "recommended": False},
+        ]
 with open(OUT / "ambiguity_matches.json", "w") as f:
     json.dump(ambiguity_matches, f, indent=2)
 

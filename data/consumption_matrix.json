@@ -1,51 +1,51 @@
 [
   {
     "bucket": "Older than 10 years",
-    "audio_premium": 4607079,
-    "audio_ad_supported": 2480735,
-    "video_premium": 974574,
-    "video_ad_supported": 797379
+    "audio_premium": 4065932,
+    "audio_ad_supported": 2189348,
+    "video_premium": 860101,
+    "video_ad_supported": 703719
   },
   {
     "bucket": "2017-2020",
-    "audio_premium": 2279350,
-    "audio_ad_supported": 1227342,
-    "video_premium": 482170,
-    "video_ad_supported": 394503
+    "audio_premium": 4520534,
+    "audio_ad_supported": 2434134,
+    "video_premium": 956267,
+    "video_ad_supported": 782400
   },
   {
     "bucket": "2021",
-    "audio_premium": 5333775,
-    "audio_ad_supported": 2872033,
-    "video_premium": 1128298,
-    "video_ad_supported": 923153
+    "audio_premium": 2252144,
+    "audio_ad_supported": 1212693,
+    "video_premium": 476415,
+    "video_ad_supported": 389794
   },
   {
     "bucket": "2022",
-    "audio_premium": 6975974,
-    "audio_ad_supported": 3756294,
-    "video_premium": 1475687,
-    "video_ad_supported": 1207380
+    "audio_premium": 2845269,
+    "audio_ad_supported": 1532068,
+    "video_premium": 601884,
+    "video_ad_supported": 492450
   },
   {
     "bucket": "2023",
-    "audio_premium": 2504526,
-    "audio_ad_supported": 1348591,
-    "video_premium": 529804,
-    "video_ad_supported": 433476
+    "audio_premium": 3493849,
+    "audio_ad_supported": 1881304,
+    "video_premium": 739084,
+    "video_ad_supported": 604705
   },
   {
     "bucket": "2024",
-    "audio_premium": 4578294,
-    "audio_ad_supported": 2465235,
-    "video_premium": 968485,
-    "video_ad_supported": 792397
+    "audio_premium": 4925126,
+    "audio_ad_supported": 2651991,
+    "video_premium": 1041854,
+    "video_ad_supported": 852426
   },
   {
     "bucket": "2025",
-    "audio_premium": 5029717,
-    "audio_ad_supported": 2708309,
-    "video_premium": 1063979,
-    "video_ad_supported": 870528
+    "audio_premium": 2876256,
+    "audio_ad_supported": 1548753,
+    "video_premium": 608439,
+    "video_ad_supported": 497814
   }
 ]
