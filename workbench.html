@@ -113,9 +113,9 @@
     }
 
     .app {
-      max-width: 1320px;
+      max-width: 1600px;
       margin: 0 auto;
-      padding: 16px 34px 70px;
+      padding: 24px 52px 70px;
     }
 
     /* ---------- HEADER ---------- */
@@ -133,22 +133,6 @@
       gap: 14px;
     }
 
-    .brand-logo {
-      width: 42px;
-      height: 42px;
-      flex: 0 0 42px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 14px;
-      background: var(--surface);
-      box-shadow: 0 0 0 1px rgba(227, 0, 15, 0.12);
-    }
-
-    .brand-logo svg {
-      width: 100%;
-      height: 100%;
-    }
 
     .brand-mark {
       width: 34px;
@@ -177,23 +161,29 @@
     }
 
     .brand-text {
-      line-height: 1.15;
+      line-height: 1.2;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
 
     .brand-name {
       font-family: var(--font-mono);
-      font-weight: 800;
-      font-size: 1.02rem;
-      letter-spacing: .02em;
+      font-weight: 500;
+      font-size: .62rem;
+      letter-spacing: .28em;
+      color: var(--text-mute);
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--border-strong);
+      margin-bottom: 4px;
     }
 
     .brand-sub {
       font-family: var(--font-mono);
       font-weight: 500;
-      font-size: .66rem;
-      letter-spacing: .22em;
+      font-size: .62rem;
+      letter-spacing: .28em;
       color: var(--text-mute);
-      margin-top: 2px;
     }
 
     .theme-toggle {
@@ -295,96 +285,6 @@
       color: var(--text-dim);
       font-size: .95rem;
       margin: 0 0 6px;
-      max-width: 640px;
-    }
-
-    /* ---------- TICKER ---------- */
-    .ticker-wrap {
-      margin: 18px 0 22px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--surface-2);
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-      border-radius: var(--radius-s);
-    }
-
-    .ticker-wrap::before,
-    .ticker-wrap::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 36px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .ticker-wrap::before {
-      left: 0;
-      background: linear-gradient(90deg, var(--surface-2), transparent);
-    }
-
-    .ticker-wrap::after {
-      right: 0;
-      background: linear-gradient(270deg, var(--surface-2), transparent);
-    }
-
-    .ticker {
-      display: inline-flex;
-      align-items: center;
-      gap: 34px;
-      padding: 9px 20px;
-      animation: ticker-scroll 32s linear infinite;
-      font-family: var(--font-mono);
-      font-size: .72rem;
-      color: var(--text-dim);
-    }
-
-    .ticker-wrap:hover .ticker {
-      animation-play-state: paused;
-    }
-
-    @keyframes ticker-scroll {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .ticker-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .ticker-tag {
-      font-weight: 800;
-      font-size: .6rem;
-      letter-spacing: .08em;
-      padding: 2px 8px;
-      border-radius: 10px;
-      color: #fff;
-    }
-
-    .tk-live {
-      background: var(--accent);
-    }
-
-    .tk-step {
-      background: var(--blue);
-    }
-
-    .tk-note {
-      background: var(--green);
-    }
-
-    .ticker-item b {
-      color: var(--text);
     }
 
     /* ---------- TAB BAR ---------- */
@@ -395,6 +295,7 @@
       margin-bottom: 26px;
       overflow-x: auto;
       padding-bottom: 4px;
+      padding-top: 32px;
     }
 
     .tabbar::-webkit-scrollbar {
@@ -413,9 +314,9 @@
       letter-spacing: .05em;
       padding: 9px 15px;
       border-radius: 20px;
-      border: 1.5px solid var(--pill-c, var(--border-strong));
+      border: 1.5px solid var(--text-dim);
       background: transparent;
-      color: var(--pill-c, var(--text-dim));
+      color: var(--text-dim);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -430,7 +331,7 @@
     }
 
     .tab-pill .badge {
-      background: var(--pill-c, var(--text-dim));
+      background: var(--text-dim);
       color: #fff;
       border-radius: 8px;
       padding: 1px 6px;
@@ -462,6 +363,7 @@
       padding-left: 16px;
       position: relative;
       margin-bottom: 4px;
+      margin-top: 15px;
     }
 
     .section-title::before {
@@ -882,6 +784,7 @@
       border-radius: var(--radius-m);
       overflow: hidden;
       box-shadow: var(--shadow);
+      margin-top: 15px;
     }
 
     table {
@@ -1002,6 +905,7 @@
       background: var(--surface-2);
       border: 1px solid var(--border);
       border-radius: 12px;
+      margin-top: 15px;
       padding: 4px;
       margin-bottom: 16px;
       width: fit-content;
@@ -1129,39 +1033,10 @@
 
     <header class="topbar">
       <div class="brand">
-        <div class="brand-logo" aria-hidden="true">
-          <svg viewBox="0 0 84 84" xmlns="http://www.w3.org/2000/svg">
-            <rect width="84" height="84" rx="22" fill="#fff"/>
-            <g fill="#E3000F">
-              <circle cx="34" cy="18" r="5"/>
-              <circle cx="42" cy="18" r="5"/>
-              <circle cx="50" cy="18" r="5"/>
-              <circle cx="26" cy="28" r="5"/>
-              <circle cx="34" cy="28" r="5"/>
-              <circle cx="42" cy="28" r="5"/>
-              <circle cx="50" cy="28" r="5"/>
-              <circle cx="58" cy="28" r="5"/>
-              <circle cx="18" cy="38" r="5"/>
-              <circle cx="26" cy="38" r="5"/>
-              <circle cx="34" cy="38" r="5"/>
-              <circle cx="42" cy="38" r="5"/>
-              <circle cx="50" cy="38" r="5"/>
-              <circle cx="58" cy="38" r="5"/>
-              <circle cx="66" cy="38" r="5"/>
-              <circle cx="26" cy="50" r="5"/>
-              <circle cx="34" cy="50" r="5"/>
-              <circle cx="42" cy="50" r="5"/>
-              <circle cx="50" cy="50" r="5"/>
-              <circle cx="58" cy="50" r="5"/>
-              <circle cx="34" cy="60" r="5"/>
-              <circle cx="42" cy="60" r="5"/>
-              <circle cx="50" cy="60" r="5"/>
-            </g>
-          </svg>
-        </div>
+        <img src="sonymusic.png" alt="Sony Music" height="42">
         <div class="brand-text">
           <div class="brand-name">SONY MUSIC</div>
-          <div class="brand-sub">M&amp;A PLATFORM</div>
+          <div class="brand-sub">LATIN</div>
         </div>
       </div>
       <button class="theme-toggle" id="themeToggle">
@@ -1170,18 +1045,10 @@
       </button>
     </header>
 
-    <div class="meta-row">
-      <div class="meta-right">
-      </div>
-    </div>
-
     <h1 class="headline">M&amp;A CATALOG <em>EVALUATION</em> PLATFORM</h1>
     <p class="sub-headline">Interactive analyst prototype &mdash; identify a catalog, resolve ambiguity, map
       territories, and generate corporate-ready valuation inputs. All figures are illustrative dummy data.</p>
 
-    <div class="ticker-wrap">
-      <div class="ticker" id="tickerTrack"></div>
-    </div>
 
     <nav class="tabbar" id="tabbar"></nav>
 
@@ -1207,21 +1074,23 @@
 
     const SCREENS = [
       { n: 1, key: "catalog", label: "CATALOG SELECT", color: "var(--accent)" },
-      { n: 2, key: "metadata", label: "METADATA REVIEW", color: "var(--blue)" },
-      { n: 3, key: "territory", label: "TERRITORY MAP", color: "var(--gold)" },
-      { n: 4, key: "analytics", label: "CATALOG ANALYTICS", color: "var(--green)" },
-      { n: 5, key: "revenue", label: "REVENUE & PPD", color: "var(--purple)" },
-      { n: 6, key: "albums", label: "ALBUM ANALYSIS", color: "var(--accent)" },
-      { n: 7, key: "forecast", label: "NEW RELEASE FCST", color: "var(--teal)" },
-      { n: 8, key: "export", label: "CORPORATE EXPORT", color: "var(--blue)" },
+      { n: 2, key: "metadata", label: "RESOLVE AMBIGUITY", color: "var(--accent)" },
+      { n: 3, key: "metainc", label: "METADATA TO INCLUDE", color: "var(--accent)" },
+      { n: 4, key: "territory", label: "TERRITORY MAP", color: "var(--accent)" },
+      { n: 5, key: "analytics", label: "CATALOG ANALYTICS", color: "var(--accent)" },
+      { n: 6, key: "revenue", label: "REVENUE & PPD", color: "var(--accent)" },
+      { n: 7, key: "albums", label: "ALBUM ANALYSIS", color: "var(--accent)" },
+      { n: 8, key: "forecast", label: "NEW RELEASE FCST", color: "var(--accent)" },
+      { n: 9, key: "export", label: "CORPORATE EXPORT", color: "var(--accent)" },
     ];
 
     const state = {
       screen: 1,
       theme: "light",
-      searchMode: "Label",
+      searchMode: "Artist",
       searchTerm: "",
-      resolvedEntity: null,
+      resolvedEntities: [],
+      metadataSearch: "",
       includedAlbums: null,
       territoryMode: "Individual Countries",
       region: Object.keys(DATA.territories.regions)[0],
@@ -1240,7 +1109,7 @@
       if (state.includedAlbums) return;
       const m = {};
       DATA.albums.forEach(a => {
-        m[a.album_id] = !a.is_compilation && a.release_type !== "Single" && a.release_type !== "Video Release";
+        m[a.album_id] = true;
       });
       state.includedAlbums = m;
     }
@@ -1283,7 +1152,7 @@
     }
 
     function stepMeta(n, label) {
-      return `<div class="step-meta">STEP ${n} OF 8 &middot; ${esc(label)} <span class="prog">[ ${"&#9632;".repeat(n)}${"&#9633;".repeat(8 - n)} ]</span></div>`;
+      return `<div class="step-meta">STEP ${n} OF 9 &middot; ${esc(label)} <span class="prog">[ ${"&#9632;".repeat(n)}${"&#9633;".repeat(9 - n)} ]</span></div>`;
     }
 
     function tag(text, cls) {
@@ -1493,7 +1362,7 @@
 
     function navButtons() {
       const back = state.screen > 1 ? `<button class="btn secondary" onclick="goScreen(${state.screen - 1})">&larr; Back</button>` : `<span></span>`;
-      const next = state.screen < 8 ? `<button class="btn" onclick="goScreen(${state.screen + 1})">Next &rarr;</button>` : `<span></span>`;
+      const next = state.screen < 9 ? `<button class="btn" onclick="goScreen(${state.screen + 1})">Next &rarr;</button>` : `<span></span>`;
       return `<div class="nav-row">${back}<div class="spacer">${SCREENS[state.screen - 1].label}</div>${next}</div>`;
     }
 
@@ -1565,50 +1434,44 @@
     function dispatchSearch() {
       const sel = document.getElementById("searchTermSel");
       if (sel) state.searchTerm = sel.value;
-      state.resolvedEntity = null;
+      state.resolvedEntities = [];
       toast("Searching local catalog JSON data...");
     }
 
-    /* ---- SCREEN 2 : METADATA REVIEW ---- */
+    /* ---- SCREEN 2 : RESOLVE AMBIGUITY ---- */
     function renderScreen2() {
       const matches = getAmbiguityMatches();
-      const defaultPick = (matches.find(m => m.recommended) || matches[0]).name;
-      if (!state.resolvedEntity || !matches.find(m => m.name === state.resolvedEntity)) state.resolvedEntity = defaultPick;
 
       const confColor = c => c === "High" ? "green" : c === "Medium" ? "gold" : "grey";
-      const rows = matches.map(m => `<td class="strong">${esc(m.name)}</td><td>${tag(m.confidence, confColor(m.confidence))}</td><td class="num">${fmtNum(m.track_count)}</td><td>${m.recommended ? tag("Recommended", "green") : "&mdash;"}</td>`);
-
-      const df_albums = DATA.albums;
-      const albumRows = df_albums.map(a => {
-        const inc = !!state.includedAlbums[a.album_id];
-        return `<td><input type="checkbox" class="row-check" ${inc ? "checked" : ""} onchange="toggleAlbumInclude('${a.album_id}', this.checked)"></td>
-      <td class="strong">${esc(a.album_name)}</td><td>${esc(a.release_type)}</td><td class="num">${a.release_year}</td>
-      <td class="num">${a.track_count}</td><td class="num">${fmtUSD(a.current_revenue_usd)}</td>`;
+      const rows = matches.map(m => {
+        const checked = state.resolvedEntities.includes(m.name) ? "checked" : "";
+        return `<td><input type="checkbox" class="row-check" ${checked} onchange="toggleEntitySelect('${esc(m.name).replace(/'/g, "\\'")}', this.checked)"></td>
+          <td class="strong">${esc(m.name)}</td><td>${tag(m.confidence, confColor(m.confidence))}</td><td class="num">${fmtNum(m.track_count)}</td><td>${m.recommended ? tag("Recommended", "green") : "&mdash;"}</td>`;
       });
+
+      const selectedHtml = state.resolvedEntities.length
+        ? `<div class="notice success">Selected: <b>${state.resolvedEntities.map(esc).join("</b>, <b>")}</b></div>`
+        : `<div class="notice info">Select at least one entity to continue.</div>`;
 
       return `
     ${stepMeta(2, "Resolve Ambiguity")}
-    ${sectionTitle("Resolve Ambiguity", "Confirm the exact catalog entity. This is a mandatory business requirement — near-duplicate names must not be merged silently.")}
-    ${table(["Candidate Entity", "Match Confidence", "Track Count", "System Recommendation"], rows)}
-    <div class="field" style="margin-top:16px;">
-      <label class="field-label">Confirm the Correct Entity</label>
-      <div class="radio-row">
-        ${matches.map(m => `<div class="radio-opt ${m.name === state.resolvedEntity ? "sel" : ""}" onclick="pickEntity('${esc(m.name).replace(/'/g, "\\'")}')">${esc(m.name)}</div>`).join("")}
-      </div>
-    </div>
-    <div class="notice success">Selected entity locked: <b>${esc(state.resolvedEntity)}</b></div>
-
-    ${sectionTitle("Metadata to Include", "Analyst selects which albums / tracks / labels flow into the valuation.")}
-    ${table(["Include", "Album", "Release Type", "Release Year", "Tracks", "Current Revenue (USD)"], albumRows, { scroll: true })}
-    <div class="notice info"><b>Album Assignment Logic:</b> system keeps the <i>first released album</i> per song, and automatically excludes Compilations, Singles, and Video Releases from the primary valuation — all related albums remain stored for reference.</div>
+    ${sectionTitle("Resolve Ambiguity", "Select one or more catalog entities. Near-duplicate names must not be merged silently.")}
+    ${table(["Select", "Candidate Entity", "Match Confidence", "Track Count", "System Recommendation"], rows)}
+    ${selectedHtml}
     ${navButtons()}
   `;
     }
-    function pickEntity(name) { state.resolvedEntity = name; render(); }
-    function toggleAlbumInclude(id, val) { state.includedAlbums[id] = val; renderKeepScroll(); }
+    function toggleEntitySelect(name, checked) {
+      if (checked) {
+        if (!state.resolvedEntities.includes(name)) state.resolvedEntities.push(name);
+      } else {
+        state.resolvedEntities = state.resolvedEntities.filter(n => n !== name);
+      }
+      renderKeepScroll();
+    }
 
-    /* ---- SCREEN 3 : LOCAL TERRITORY MAPPING ---- */
-    function renderScreen3() {
+    /* ---- SCREEN 4 : LOCAL TERRITORY MAPPING ---- */
+    function renderScreen4() {
       const allCountries = DATA.territories.countries;
       const regions = DATA.territories.regions;
       const mode = state.territoryMode;
@@ -1635,7 +1498,7 @@
       const rowRest = allCountries.length - rowCount;
 
       return `
-    ${stepMeta(3, "Local Territory Selection")}
+    ${stepMeta(4, "Local Territory Selection")}
     ${sectionTitle("Local Territory Selection", "Required input — drives PPD calculations, revenue allocation, and Corporate outputs.")}
     <div class="field">
       <label class="field-label">Select By</label>
@@ -1648,9 +1511,26 @@
       ${kpiCard("Local Territories Selected", rowCount)}
       ${kpiCard("Rest of World (ROW)", rowRest + " territories")}
     </div>
-    ${sectionTitle("Preview &middot; Local vs ROW Split")}
-    ${donutChart(["Local", "ROW"], [DATA.local_row_revenue.local_revenue_usd, DATA.local_row_revenue.row_revenue_usd], ["#E1261C", "#8A8A8A"])}
-    <div class="hint">This split recalculates automatically as territory selection is deployed against Snowflake in production.</div>
+    <div style="margin-top: 24px;">
+      ${sectionTitle("Countrywise Output")}
+      ${table(
+        ["Country Name", "Consumption", "% of total", "Local Mapping", "Audio PPD's", "Video PPD's", "Local %", "Rest of the World %", "Local Audio PPD", "Local Video PPD", "RoW Audio PPD", "RoW Video PPD", "Total Audio PPD"],
+        [
+          `<td><strong>Worldwide</strong></td><td class="num">98,765,432</td><td class="num">100%</td><td>Worldwide</td><td class="num">0.004321</td><td class="num">0.001876</td><td class="num">-</td><td class="num">-</td><td class="num">0.003210</td><td class="num">0.001540</td><td class="num">0.001111</td><td class="num">0.000336</td><td class="num">0.004321</td>`,
+          ...allCountries.map((c, i) => {
+            const isLocal = state.localTerritories.includes(c);
+            const cons = Math.floor(25000000 / (i + 1.2));
+            const pct = Math.max(1, 22 - i) + "%";
+            const audioPpd = (0.002000 + (Math.abs(Math.sin(i)) * 0.005)).toFixed(6);
+            const videoPpd = (0.000800 + (Math.abs(Math.cos(i)) * 0.0015)).toFixed(6);
+            const pctL = isLocal ? Math.floor(30 + Math.abs(Math.sin(i)) * 40) + "%" : "0%";
+            const pctR = !isLocal ? Math.floor(10 + Math.abs(Math.cos(i)) * 50) + "%" : "0%";
+            return `<td>${esc(c)}</td><td class="num">${fmtNum(cons)}</td><td class="num">${pct}</td><td style="color: ${isLocal ? 'var(--tag-green-text)' : 'var(--text-dim)'}">${isLocal ? "Local" : "RoW"}</td><td class="num">${audioPpd}</td><td class="num">${videoPpd}</td><td class="num">${pctL}</td><td class="num">${pctR}</td><td class="num">-</td><td class="num">-</td><td class="num">-</td><td class="num">-</td><td class="num">-</td>`;
+          })
+        ],
+        { scroll: true }
+      )}
+    </div>
     ${navButtons()}
   `;
     }
@@ -1662,8 +1542,39 @@
       render();
     }
 
-    /* ---- SCREEN 4 : CATALOG ANALYTICS ---- */
-    function renderScreen4() {
+    /* ---- SCREEN 3 : METADATA TO INCLUDE ---- */
+    function renderScreen3() {
+      const term = (state.metadataSearch || "").toLowerCase();
+      const filteredAlbums = DATA.albums.filter(a => {
+        if (!term) return true;
+        const nameMatch = (a.album_name || "").toLowerCase().includes(term);
+        const isrcMatch = (a.isrc || "").toLowerCase().includes(term);
+        return nameMatch || isrcMatch;
+      });
+
+      const albumRows = filteredAlbums.map(a => {
+        const inc = !!state.includedAlbums[a.album_id];
+        return `<td><input type="checkbox" class="row-check" ${inc ? "checked" : ""} onchange="toggleAlbumInclude('${a.album_id}', this.checked)"></td>
+      <td class="strong">${esc(a.album_name)}</td><td style="font-family: var(--font-mono); font-size: 0.85em;">${esc(a.isrc || '-')}</td><td>${esc(a.release_type)}</td><td class="num">${a.release_year}</td>
+      <td class="num">${a.track_count}</td><td class="num">${fmtUSD(a.current_revenue_usd)}</td>`;
+      });
+
+      return `
+    ${stepMeta(3, "Metadata to Include")}
+    ${sectionTitle("Metadata to Include", "Select which albums / tracks / labels flow into the valuation.")}
+    <div class="field" style="margin-bottom: 16px;">
+      <label class="field-label">Search by Album or ISRC</label>
+      <input id="metadataSearchInput" type="text" placeholder="Type to filter..." value="${esc(state.metadataSearch)}" oninput="setMetadataSearch(this.value)" style="width: 100%; max-width: 400px; padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
+    </div>
+    ${table(["Include", "Album", "ISRC", "Release Type", "Release Year", "Tracks", "Current Revenue (USD)"], albumRows, { scroll: true })}
+    ${navButtons()}
+  `;
+    }
+    function toggleAlbumInclude(id, val) { state.includedAlbums[id] = val; renderKeepScroll(); }
+    function setMetadataSearch(v) { state.metadataSearch = v; renderKeepScroll(); }
+
+    /* ---- SCREEN 5 : CATALOG ANALYTICS ---- */
+    function renderScreen5() {
       const idx = Math.round(DATA.market_growth.artist_growth_pct / DATA.market_growth.market_growth_pct * 100);
       const matrix = DATA.consumption_matrix;
       const buckets = matrix.map(m => m.bucket);
@@ -1705,7 +1616,7 @@
       }
 
       return `
-    ${stepMeta(4, "Catalog Analytics")}
+    ${stepMeta(5, "Catalog Analytics")}
     ${sectionTitle("Catalog Analytics", "Consumption split by content type and monetization model, with catalog age and market benchmark KPIs.")}
     <div class="grid grid-4">
       ${kpiCard("Catalog from Releases &gt; 10y", DATA.catalog_age_split.older_than_10y_pct + "%")}
@@ -1722,8 +1633,8 @@
     }
     function setAnalyticsTab(i) { state.analyticsTab = i; render(); }
 
-    /* ---- SCREEN 5 : RELEASE-YEAR & REVENUE ---- */
-    function renderScreen5() {
+    /* ---- SCREEN 6 : RELEASE-YEAR & REVENUE ---- */
+    function renderScreen6() {
       const ry = DATA.release_year_analysis;
       const buckets = ry.map(r => r.bucket);
       const tabs = ["Consumption", "Revenue", "Growth"];
@@ -1739,7 +1650,7 @@
       const ppdFuture = Object.entries(DATA.ppd.future_splits).map(([k, v]) => `<td class="strong">${esc(k)}</td><td class="num">${fmtUSD4(v)}</td>`);
 
       return `
-    ${stepMeta(5, "Release-Year Analysis & Revenue Conversion")}
+    ${stepMeta(6, "Release-Year Analysis & Revenue Conversion")}
     ${sectionTitle("Release-Year Analysis & Revenue Conversion", "Consumption, revenue, and growth by release-year bucket, plus PPD-based revenue conversion and Local/ROW output.")}
     <div class="subtabs">
       ${tabs.map((tb, i) => `<button class="subtab ${i === t ? "active" : ""}" onclick="setRevenueTab(${i})">${tb}</button>`).join("")}
@@ -1763,8 +1674,8 @@
     }
     function setRevenueTab(i) { state.revenueTab = i; render(); }
 
-    /* ---- SCREEN 6 : ALBUM ANALYSIS ---- */
-    function renderScreen6() {
+    /* ---- SCREEN 7 : ALBUM ANALYSIS ---- */
+    function renderScreen7() {
       const filter = state.albumFilter;
       const albumsWithStatus = DATA.albums.map(a => Object.assign({}, a, { Status: state.includedAlbums[a.album_id] ? "Include" : "Exclude" }));
       const view = filter === "All" ? albumsWithStatus : albumsWithStatus.filter(a => a.Status === filter);
@@ -1778,7 +1689,7 @@
       const sortedInc = included.slice().sort((a, b) => a.current_revenue_usd - b.current_revenue_usd);
 
       return `
-    ${stepMeta(6, "Album Analysis")}
+    ${stepMeta(7, "Album Analysis")}
     ${sectionTitle("Album Analysis", "Albums, release year, track count, and current revenue for the resolved catalog.")}
     <div class="field" style="max-width:220px;">
       <label class="field-label">Filter</label>
@@ -1799,8 +1710,8 @@
     }
     function setAlbumFilter(v) { state.albumFilter = v; render(); }
 
-    /* ---- SCREEN 7 : NEW RELEASE FORECASTING ---- */
-    function renderScreen7() {
+    /* ---- SCREEN 8 : NEW RELEASE FORECAST ---- */
+    function renderScreen8() {
       const df = DATA.new_release_tracks;
       const flags = Array.from(new Set(df.map(d => d.flag).filter(Boolean))).sort();
       const active = df.filter(function (d) { return state.excludedFlags.indexOf(d.flag) === -1; });
@@ -1821,7 +1732,7 @@
       const sortedActive = active.slice().sort((a, b) => a.first_12m_streams_millions - b.first_12m_streams_millions);
 
       return `
-    ${stepMeta(7, "New Release Forecasting")}
+    ${stepMeta(8, "New Release Forecasting")}
     ${sectionTitle("New Release Forecasting", "Benchmark future release performance from historical first-12-month consumption (2020+ releases).")}
     ${sectionTitle("Exclusion Framework", "Analyst retains control — exclude duplicates, collaborations, outliers, data errors, or incomplete data.")}
     <div class="field"><label class="field-label">Exclude Tracks Flagged As</label><div class="check-row">${flagChips}</div></div>
@@ -1866,7 +1777,7 @@
     function setGrowth(v) { state.expectedGrowth = parseFloat(v); renderKeepScroll(); }
     function setDecay(v) { state.expectedDecay = parseFloat(v); renderKeepScroll(); }
 
-    /* ---- SCREEN 8 : CORPORATE EXPORT ---- */
+    /* ---- SCREEN 9 : CORPORATE EXPORT ---- */
     function computeExport() {
       const included = DATA.albums.filter(a => state.includedAlbums[a.album_id]);
       const activeNr = DATA.new_release_tracks.filter(d => state.excludedFlags.indexOf(d.flag) === -1);
@@ -1892,12 +1803,12 @@
         _included: included,
       };
     }
-    function renderScreen8() {
+    function renderScreen9() {
       const exp = computeExport();
       const rows = Object.entries(exp).filter(([k]) => k !== "_included").map(([k, v]) => `<td class="strong">${esc(k)}</td><td class="num">${esc(v)}</td>`);
 
       return `
-    ${stepMeta(8, "Corporate Export")}
+    ${stepMeta(9, "Corporate Export")}
     ${sectionTitle("Corporate Export", "Standardized summary tables and Corporate-model inputs, ready for the Corporate Excel process.")}
     ${table(["Corporate Template Field", "Value"], rows, { scroll: true })}
     <div class="grid grid-3" style="margin-top:16px;">
@@ -1937,31 +1848,30 @@
        MAIN RENDER / NAV / THEME / TICKER
        ============================================================ */
 
-    const RENDERERS = [renderScreen1, renderScreen2, renderScreen3, renderScreen4, renderScreen5, renderScreen6, renderScreen7, renderScreen8];
+    const RENDERERS = [renderScreen1, renderScreen2, renderScreen3, renderScreen4, renderScreen5, renderScreen6, renderScreen7, renderScreen8, renderScreen9];
 
     function goScreen(n) {
-      state.screen = Math.max(1, Math.min(8, n));
+      state.screen = Math.max(1, Math.min(9, n));
       render();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     function renderTabbar() {
+      if (!state.resolvedEntities.length) {
+        const matches = getAmbiguityMatches();
+        if (matches && matches.length) {
+          const defaultPick = (matches.find(m => m.recommended) || matches[0]).name;
+          state.resolvedEntities = [defaultPick];
+        }
+      }
+
       const html = SCREENS.map(s => {
         const active = s.n === state.screen;
-        const badgeVal = s.n === 2 ? DATA.albums.length : s.n === 3 ? state.localTerritories.length : s.n === 6 ? DATA.albums.length : s.n === 7 ? DATA.new_release_tracks.length : "";
         return `<button class="tab-pill ${active ? "active" : ""}" style="--pill-c:${s.color}" onclick="goScreen(${s.n})">
-      ${s.n} &middot; ${s.label} ${badgeVal !== "" ? `<span class="badge">${badgeVal}</span>` : ""}
+      ${s.n} &middot; ${s.label}
     </button>`;
       }).join("");
       $("#tabbar").innerHTML = html;
-    }
-
-    function renderTicker() {
-      const entity = state.resolvedEntity || state.searchTerm;
-      const items = [
-      ];
-      const seq = items.join(`<span style="opacity:.3">&#9670;</span>`);
-      $("#tickerTrack").innerHTML = seq + `<span style="opacity:.3">&#9670;</span>` + seq;
     }
 
     function renderMeta() {
@@ -1970,7 +1880,6 @@
 
     function render() {
       renderTabbar();
-      renderTicker();
       renderMeta();
       $("#screenRoot").innerHTML = RENDERERS[state.screen - 1]();
     }
@@ -1978,8 +1887,30 @@
     /* Re-render without losing scroll position (used for slider/number inputs) */
     function renderKeepScroll() {
       const y = window.scrollY;
+      const activeEl = document.activeElement;
+      let activeId = null;
+      let sStart = null;
+      let sEnd = null;
+      if (activeEl && activeEl.id && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
+        activeId = activeEl.id;
+        try {
+          sStart = activeEl.selectionStart;
+          sEnd = activeEl.selectionEnd;
+        } catch (e) { }
+      }
+
       render();
       window.scrollTo(0, y);
+
+      if (activeId) {
+        const el = document.getElementById(activeId);
+        if (el) {
+          el.focus();
+          if (sStart !== null && sEnd !== null) {
+            try { el.setSelectionRange(sStart, sEnd); } catch (e) { }
+          }
+        }
+      }
     }
 
     /* ---- Theme toggle ---- */
