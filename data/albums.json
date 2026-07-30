@@ -2,6 +2,7 @@
   {
     "album_id": "ALB001",
     "album_name": "Pies Descalzos",
+    "isrc": "USSM12200001",
     "release_type": "Album",
     "is_compilation": false,
     "release_year": 2022,
@@ -11,6 +12,7 @@
   {
     "album_id": "ALB002",
     "album_name": "Donde Estan Los Ladrones",
+    "isrc": "USSM11000002",
     "release_type": "Album",
     "is_compilation": false,
     "release_year": 2010,
@@ -20,6 +22,7 @@
   {
     "album_id": "ALB003",
     "album_name": "Laundry Service",
+    "isrc": "USSM12300003",
     "release_type": "Album",
     "is_compilation": false,
     "release_year": 2023,
@@ -29,6 +32,7 @@
   {
     "album_id": "ALB004",
     "album_name": "Fijacion Oral Vol.1",
+    "isrc": "USSM11900004",
     "release_type": "Album",
     "is_compilation": false,
     "release_year": 2019,
@@ -38,6 +42,7 @@
   {
     "album_id": "ALB005",
     "album_name": "Sale el Sol",
+    "isrc": "USSM10100005",
     "release_type": "Album",
     "is_compilation": false,
     "release_year": 2001,
@@ -47,6 +52,7 @@
   {
     "album_id": "ALB006",
     "album_name": "El Dorado",
+    "isrc": "USSM10900006",
     "release_type": "Album",
     "is_compilation": false,
     "release_year": 2009,
@@ -56,6 +62,7 @@
   {
     "album_id": "ALB007",
     "album_name": "Grandes Exitos",
+    "isrc": "USSM12300007",
     "release_type": "Greatest Hits",
     "is_compilation": true,
     "release_year": 2023,
@@ -65,6 +72,7 @@
   {
     "album_id": "ALB008",
     "album_name": "Loba (Deluxe)",
+    "isrc": "USSM12000008",
     "release_type": "Compilation",
     "is_compilation": true,
     "release_year": 2020,
@@ -74,6 +82,7 @@
   {
     "album_id": "ALB009",
     "album_name": "Vivir la Vida - Live",
+    "isrc": "USSM10100009",
     "release_type": "Compilation",
     "is_compilation": true,
     "release_year": 2001,
@@ -83,6 +92,7 @@
   {
     "album_id": "ALB010",
     "album_name": "Waka Waka - Single",
+    "isrc": "USSM11100010",
     "release_type": "Single",
     "is_compilation": false,
     "release_year": 2011,
@@ -92,6 +102,7 @@
   {
     "album_id": "ALB011",
     "album_name": "Hips Don't Lie - Single",
+    "isrc": "USSM10900011",
     "release_type": "Single",
     "is_compilation": false,
     "release_year": 2009,
@@ -101,6 +112,7 @@
   {
     "album_id": "ALB012",
     "album_name": "Te Felicito - Video Release",
+    "isrc": "USSM11100012",
     "release_type": "Video Release",
     "is_compilation": false,
     "release_year": 2011,
@@ -110,6 +122,7 @@
   {
     "album_id": "ALB013",
     "album_name": "Duele El Corazon - Single",
+    "isrc": "USSM10200013",
     "release_type": "Single",
     "is_compilation": false,
     "release_year": 2002,
@@ -119,6 +132,7 @@
   {
     "album_id": "ALB014",
     "album_name": "Antologia",
+    "isrc": "USSM11100014",
     "release_type": "Greatest Hits",
     "is_compilation": true,
     "release_year": 2011,
@@ -128,6 +142,7 @@
   {
     "album_id": "ALB015",
     "album_name": "Sonora - Single",
+    "isrc": "USSM12300015",
     "release_type": "Single",
     "is_compilation": false,
     "release_year": 2023,

@@ -11,6 +11,7 @@ run unmodified both locally and inside Streamlit in Snowflake (SiS).
 
 from pathlib import Path
 import json
+import base64
 
 import streamlit as st
 import streamlit.components.v1 as components
@@ -47,6 +48,14 @@ for json_file in data_dir.glob("*.json"):
     injected_data[json_file.stem] = json.loads(json_file.read_text(encoding="utf-8"))
 
 html = html.replace("window.__INJECTED_DATA__ || {}", json.dumps(injected_data))
+
+# Embed sonymusic.png as a Base64 data URI so it loads correctly inside
+# the Streamlit components.html iframe (relative file paths don't resolve there).
+logo_path = Path(__file__).parent / "sonymusic.png"
+if logo_path.exists():
+    logo_b64 = base64.b64encode(logo_path.read_bytes()).decode()
+    logo_data_uri = f"data:image/png;base64,{logo_b64}"
+    html = html.replace('src="sonymusic.png"', f'src="{logo_data_uri}"')
 
 # Tall fixed height with internal scrolling looks/behaves oddly for a
 # long, multi-section app like this one, so instead we render at a
