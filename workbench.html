@@ -242,29 +242,6 @@
     }
 
     /* ---------- META ROW ---------- */
-    .meta-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-family: var(--font-mono);
-      font-size: .68rem;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--text-mute);
-      margin-top: 16px;
-    }
-
-    .meta-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-dim);
-    }
-
-    .meta-right .dot-sep {
-      color: var(--accent);
-    }
-
     .entity-chip {
       background: var(--chip-bg);
       border: 1px solid var(--border);
@@ -296,20 +273,10 @@
       color: var(--text-dim);
       font-size: .95rem;
       margin: 0 0 6px;
-      max-width: 640px;
+      max-width: 1240px;
     }
 
     /* ---------- TICKER ---------- */
-    .ticker-wrap {
-      margin: 18px 0 22px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--surface-2);
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-      border-radius: var(--radius-s);
-    }
 
     .ticker-wrap::before,
     .ticker-wrap::after {
@@ -333,8 +300,6 @@
     }
 
     .ticker {
-      display: inline-flex;
-      align-items: center;
       gap: 34px;
       padding: 9px 20px;
       animation: ticker-scroll 32s linear infinite;
@@ -1170,11 +1135,6 @@
         <span class="toggle-track"><span class="toggle-thumb" id="toggleThumb"></span></span>
       </button>
     </header>
-
-    <div class="meta-row">
-      <div class="meta-right">
-      </div>
-    </div>
 
     <h1 class="headline">M&amp;A CATALOG <em>EVALUATION</em> PLATFORM</h1>
     <p class="sub-headline">Interactive analyst prototype &mdash; identify a catalog, resolve ambiguity, map
