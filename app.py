@@ -16,7 +16,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="Sony Music | M&A Catalog Evaluation Plateform",
+    page_title="Sony Music | M&A Catalog Valuation Workbench",
     page_icon="🎵",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -27,8 +27,11 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-        #MainMenu, header, footer {visibility: hidden;}
+        #MainMenu, header, footer {display: none !important;}
+        [data-testid="stHeader"] {display: none !important;}
         div.block-container {padding: 0 !important; max-width: 100% !important;}
+        [data-testid="stVerticalBlock"] {gap: 0 !important;}
+        [data-testid="stElementContainer"]:has(style) {display: none !important;}
         iframe {display: block;}
     </style>
     """,
