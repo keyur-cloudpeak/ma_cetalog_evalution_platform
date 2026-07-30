@@ -1059,8 +1059,7 @@
       { n: 5, key: "analytics", label: "CATALOG ANALYTICS", color: "var(--accent)" },
       { n: 6, key: "revenue", label: "REVENUE & PPD", color: "var(--accent)" },
       { n: 7, key: "albums", label: "ALBUM ANALYSIS", color: "var(--accent)" },
-      { n: 8, key: "forecast", label: "NEW RELEASE FCST", color: "var(--accent)" },
-      { n: 9, key: "export", label: "CORPORATE EXPORT", color: "var(--accent)" },
+      { n: 8, key: "export", label: "CORPORATE EXPORT", color: "var(--accent)" },
     ];
 
     const state = {
@@ -1401,7 +1400,7 @@
         ${["Artist", "Label", "ISRC List"].map(m => `<div class="radio-opt ${m === mode ? "sel" : ""}" onclick="setSearchMode('${m}')">${m}</div>`).join("")}
       </div>
     </div>
-    <div style="max-width: 640px; margin: 40px auto;">
+    <div style="max-width: 640px; margin-top: 24px;">
       ${searchField}
     </div>
     ${sectionTitle("Business Objective Checklist")}
