@@ -1,0 +1,182 @@
+[
+  {
+    "track_id": "TRK001",
+    "track_name": "Hips Don't Lie",
+    "isrc": "USRC11700001",
+    "release_year": 2010,
+    "first_stream_date": "2010-07-03",
+    "content_type": "Audio",
+    "primary_album_id": "ALB002"
+  },
+  {
+    "track_id": "TRK002",
+    "track_name": "Waka Waka",
+    "isrc": "USRC11700002",
+    "release_year": 2011,
+    "first_stream_date": "2011-11-20",
+    "content_type": "Audio",
+    "primary_album_id": "ALB014"
+  },
+  {
+    "track_id": "TRK003",
+    "track_name": "Te Felicito",
+    "isrc": "USRC11700003",
+    "release_year": 2011,
+    "first_stream_date": "2011-04-23",
+    "content_type": "Audio",
+    "primary_album_id": "ALB010"
+  },
+  {
+    "track_id": "TRK004",
+    "track_name": "Chantaje",
+    "isrc": "USRC11700004",
+    "release_year": 2022,
+    "first_stream_date": "2022-11-08",
+    "content_type": "Audio",
+    "primary_album_id": "ALB001"
+  },
+  {
+    "track_id": "TRK005",
+    "track_name": "La Tortura",
+    "isrc": "USRC11700005",
+    "release_year": 2010,
+    "first_stream_date": "2010-04-28",
+    "content_type": "Audio",
+    "primary_album_id": "ALB002"
+  },
+  {
+    "track_id": "TRK006",
+    "track_name": "Ojos Asi",
+    "isrc": "USRC11700006",
+    "release_year": 2023,
+    "first_stream_date": "2023-05-15",
+    "content_type": "Audio",
+    "primary_album_id": "ALB007"
+  },
+  {
+    "track_id": "TRK007",
+    "track_name": "Loba",
+    "isrc": "USRC11700007",
+    "release_year": 2023,
+    "first_stream_date": "2023-06-12",
+    "content_type": "Audio",
+    "primary_album_id": "ALB003"
+  },
+  {
+    "track_id": "TRK008",
+    "track_name": "Rabiosa",
+    "isrc": "USRC11700008",
+    "release_year": 2009,
+    "first_stream_date": "2009-05-23",
+    "content_type": "Audio",
+    "primary_album_id": "ALB011"
+  },
+  {
+    "track_id": "TRK009",
+    "track_name": "Antologia",
+    "isrc": "USRC11700009",
+    "release_year": 2011,
+    "first_stream_date": "2011-11-06",
+    "content_type": "Audio",
+    "primary_album_id": "ALB010"
+  },
+  {
+    "track_id": "TRK010",
+    "track_name": "Suerte",
+    "isrc": "USRC11700010",
+    "release_year": 2023,
+    "first_stream_date": "2023-08-13",
+    "content_type": "Audio",
+    "primary_album_id": "ALB003"
+  },
+  {
+    "track_id": "TRK011",
+    "track_name": "Underneath Your Clothes",
+    "isrc": "USRC11700011",
+    "release_year": 2023,
+    "first_stream_date": "2023-11-23",
+    "content_type": "Audio",
+    "primary_album_id": "ALB015"
+  },
+  {
+    "track_id": "TRK012",
+    "track_name": "Objection (Tango)",
+    "isrc": "USRC11700012",
+    "release_year": 2009,
+    "first_stream_date": "2009-06-27",
+    "content_type": "Audio",
+    "primary_album_id": "ALB011"
+  },
+  {
+    "track_id": "TRK013",
+    "track_name": "Whenever, Wherever",
+    "isrc": "USRC11700013",
+    "release_year": 2019,
+    "first_stream_date": "2019-01-26",
+    "content_type": "Audio",
+    "primary_album_id": "ALB004"
+  },
+  {
+    "track_id": "TRK014",
+    "track_name": "Empire",
+    "isrc": "USRC11700014",
+    "release_year": 2023,
+    "first_stream_date": "2023-05-03",
+    "content_type": "Audio",
+    "primary_album_id": "ALB007"
+  },
+  {
+    "track_id": "TRK015",
+    "track_name": "Perro Fiel",
+    "isrc": "USRC11700015",
+    "release_year": 2023,
+    "first_stream_date": "2023-10-23",
+    "content_type": "Audio",
+    "primary_album_id": "ALB015"
+  },
+  {
+    "track_id": "TRK016",
+    "track_name": "Girl Like Me",
+    "isrc": "USRC11700016",
+    "release_year": 2019,
+    "first_stream_date": "2019-11-16",
+    "content_type": "Video",
+    "primary_album_id": "ALB004"
+  },
+  {
+    "track_id": "TRK017",
+    "track_name": "Don't Wait Up",
+    "isrc": "USRC11700017",
+    "release_year": 2023,
+    "first_stream_date": "2023-11-15",
+    "content_type": "Audio",
+    "primary_album_id": "ALB015"
+  },
+  {
+    "track_id": "TRK018",
+    "track_name": "Me Enamore",
+    "isrc": "USRC11700018",
+    "release_year": 2001,
+    "first_stream_date": "2001-03-08",
+    "content_type": "Audio",
+    "primary_album_id": "ALB005"
+  },
+  {
+    "track_id": "TRK019",
+    "track_name": "Nada",
+    "isrc": "USRC11700019",
+    "release_year": 2011,
+    "first_stream_date": "2011-10-14",
+    "content_type": "Video",
+    "primary_album_id": "ALB012"
+  },
+  {
+    "track_id": "TRK020",
+    "track_name": "Monotonia",
+    "isrc": "USRC11700020",
+    "release_year": 2009,
+    "first_stream_date": "2009-04-05",
+    "content_type": "Video",
+    "primary_album_id": "ALB006"
+  }
+]

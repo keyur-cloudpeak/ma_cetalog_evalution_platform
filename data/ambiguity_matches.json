@@ -1,0 +1,41 @@
+{
+  "CHI Records": [
+    {
+      "id": "LBL001",
+      "name": "CHI Records",
+      "confidence": "High",
+      "track_count": 482,
+      "recommended": true
+    },
+    {
+      "id": "LBL002",
+      "name": "CHI Records MC",
+      "confidence": "Medium",
+      "track_count": 61,
+      "recommended": false
+    },
+    {
+      "id": "LBL003",
+      "name": "CHI Power Records",
+      "confidence": "Low",
+      "track_count": 19,
+      "recommended": false
+    }
+  ],
+  "Shakira": [
+    {
+      "id": "ART001",
+      "name": "Shakira",
+      "confidence": "High",
+      "track_count": 214,
+      "recommended": true
+    },
+    {
+      "id": "ART002",
+      "name": "Shakira ft.",
+      "confidence": "Low",
+      "track_count": 8,
+      "recommended": false
+    }
+  ]
+}

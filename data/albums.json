@@ -1,0 +1,137 @@
+[
+  {
+    "album_id": "ALB001",
+    "album_name": "Pies Descalzos",
+    "release_type": "Album",
+    "is_compilation": false,
+    "release_year": 2022,
+    "track_count": 4,
+    "current_revenue_usd": 38385.06
+  },
+  {
+    "album_id": "ALB002",
+    "album_name": "Donde Estan Los Ladrones",
+    "release_type": "Album",
+    "is_compilation": false,
+    "release_year": 2010,
+    "track_count": 8,
+    "current_revenue_usd": 223702.04
+  },
+  {
+    "album_id": "ALB003",
+    "album_name": "Laundry Service",
+    "release_type": "Album",
+    "is_compilation": false,
+    "release_year": 2023,
+    "track_count": 4,
+    "current_revenue_usd": 647714.02
+  },
+  {
+    "album_id": "ALB004",
+    "album_name": "Fijacion Oral Vol.1",
+    "release_type": "Album",
+    "is_compilation": false,
+    "release_year": 2019,
+    "track_count": 3,
+    "current_revenue_usd": 567110.5
+  },
+  {
+    "album_id": "ALB005",
+    "album_name": "Sale el Sol",
+    "release_type": "Album",
+    "is_compilation": false,
+    "release_year": 2001,
+    "track_count": 1,
+    "current_revenue_usd": 102605.05
+  },
+  {
+    "album_id": "ALB006",
+    "album_name": "El Dorado",
+    "release_type": "Album",
+    "is_compilation": false,
+    "release_year": 2009,
+    "track_count": 1,
+    "current_revenue_usd": 539764.13
+  },
+  {
+    "album_id": "ALB007",
+    "album_name": "Grandes Exitos",
+    "release_type": "Greatest Hits",
+    "is_compilation": true,
+    "release_year": 2023,
+    "track_count": 14,
+    "current_revenue_usd": 221111.98
+  },
+  {
+    "album_id": "ALB008",
+    "album_name": "Loba (Deluxe)",
+    "release_type": "Compilation",
+    "is_compilation": true,
+    "release_year": 2020,
+    "track_count": 9,
+    "current_revenue_usd": 771817.48
+  },
+  {
+    "album_id": "ALB009",
+    "album_name": "Vivir la Vida - Live",
+    "release_type": "Compilation",
+    "is_compilation": true,
+    "release_year": 2001,
+    "track_count": 6,
+    "current_revenue_usd": 667760.33
+  },
+  {
+    "album_id": "ALB010",
+    "album_name": "Waka Waka - Single",
+    "release_type": "Single",
+    "is_compilation": false,
+    "release_year": 2011,
+    "track_count": 1,
+    "current_revenue_usd": 274809.7
+  },
+  {
+    "album_id": "ALB011",
+    "album_name": "Hips Don't Lie - Single",
+    "release_type": "Single",
+    "is_compilation": false,
+    "release_year": 2009,
+    "track_count": 1,
+    "current_revenue_usd": 909994.22
+  },
+  {
+    "album_id": "ALB012",
+    "album_name": "Te Felicito - Video Release",
+    "release_type": "Video Release",
+    "is_compilation": false,
+    "release_year": 2011,
+    "track_count": 4,
+    "current_revenue_usd": 101717.36
+  },
+  {
+    "album_id": "ALB013",
+    "album_name": "Duele El Corazon - Single",
+    "release_type": "Single",
+    "is_compilation": false,
+    "release_year": 2002,
+    "track_count": 1,
+    "current_revenue_usd": 350645.72
+  },
+  {
+    "album_id": "ALB014",
+    "album_name": "Antologia",
+    "release_type": "Greatest Hits",
+    "is_compilation": true,
+    "release_year": 2011,
+    "track_count": 9,
+    "current_revenue_usd": 769664.94
+  },
+  {
+    "album_id": "ALB015",
+    "album_name": "Sonora - Single",
+    "release_type": "Single",
+    "is_compilation": false,
+    "release_year": 2023,
+    "track_count": 1,
+    "current_revenue_usd": 444562.26
+  }
+]

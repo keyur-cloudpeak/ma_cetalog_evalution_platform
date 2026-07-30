@@ -1,0 +1,51 @@
+[
+  {
+    "bucket": "Older than 10 years",
+    "audio_premium": 4607079,
+    "audio_ad_supported": 2480735,
+    "video_premium": 974574,
+    "video_ad_supported": 797379
+  },
+  {
+    "bucket": "2017-2020",
+    "audio_premium": 2279350,
+    "audio_ad_supported": 1227342,
+    "video_premium": 482170,
+    "video_ad_supported": 394503
+  },
+  {
+    "bucket": "2021",
+    "audio_premium": 5333775,
+    "audio_ad_supported": 2872033,
+    "video_premium": 1128298,
+    "video_ad_supported": 923153
+  },
+  {
+    "bucket": "2022",
+    "audio_premium": 6975974,
+    "audio_ad_supported": 3756294,
+    "video_premium": 1475687,
+    "video_ad_supported": 1207380
+  },
+  {
+    "bucket": "2023",
+    "audio_premium": 2504526,
+    "audio_ad_supported": 1348591,
+    "video_premium": 529804,
+    "video_ad_supported": 433476
+  },
+  {
+    "bucket": "2024",
+    "audio_premium": 4578294,
+    "audio_ad_supported": 2465235,
+    "video_premium": 968485,
+    "video_ad_supported": 792397
+  },
+  {
+    "bucket": "2025",
+    "audio_premium": 5029717,
+    "audio_ad_supported": 2708309,
+    "video_premium": 1063979,
+    "video_ad_supported": 870528
+  }
+]

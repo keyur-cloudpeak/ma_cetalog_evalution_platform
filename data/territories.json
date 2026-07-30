@@ -1,0 +1,52 @@
+{
+  "regions": {
+    "Central America": [
+      "Mexico",
+      "Guatemala",
+      "Honduras",
+      "El Salvador",
+      "Costa Rica",
+      "Panama"
+    ],
+    "South America": [
+      "Colombia",
+      "Argentina",
+      "Chile",
+      "Peru",
+      "Ecuador",
+      "Brazil"
+    ],
+    "North America": [
+      "USA",
+      "Canada"
+    ],
+    "Europe": [
+      "Spain",
+      "France",
+      "Germany",
+      "Italy",
+      "United Kingdom"
+    ]
+  },
+  "countries": [
+    "Mexico",
+    "USA",
+    "Colombia",
+    "Guatemala",
+    "Honduras",
+    "El Salvador",
+    "Costa Rica",
+    "Panama",
+    "Argentina",
+    "Chile",
+    "Peru",
+    "Ecuador",
+    "Brazil",
+    "Canada",
+    "Spain",
+    "France",
+    "Germany",
+    "Italy",
+    "United Kingdom"
+  ]
+}

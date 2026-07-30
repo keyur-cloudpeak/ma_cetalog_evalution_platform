@@ -1,0 +1,44 @@
+[
+  {
+    "bucket": "Older than 10 years",
+    "consumption_streams": 53375056,
+    "revenue_usd": 195514.27,
+    "yoy_growth_pct": 0.4
+  },
+  {
+    "bucket": "2017-2020",
+    "consumption_streams": 55347634,
+    "revenue_usd": 170173.68,
+    "yoy_growth_pct": 32.0
+  },
+  {
+    "bucket": "2021",
+    "consumption_streams": 72572761,
+    "revenue_usd": 316521.67,
+    "yoy_growth_pct": 17.2
+  },
+  {
+    "bucket": "2022",
+    "consumption_streams": 79416580,
+    "revenue_usd": 237469.48,
+    "yoy_growth_pct": 7.2
+  },
+  {
+    "bucket": "2023",
+    "consumption_streams": 106629520,
+    "revenue_usd": 444806.87,
+    "yoy_growth_pct": 2.1
+  },
+  {
+    "bucket": "2024",
+    "consumption_streams": 103477103,
+    "revenue_usd": 389540.26,
+    "yoy_growth_pct": -4.7
+  },
+  {
+    "bucket": "2025",
+    "consumption_streams": 125823376,
+    "revenue_usd": 526852.61,
+    "yoy_growth_pct": 33.1
+  }
+]

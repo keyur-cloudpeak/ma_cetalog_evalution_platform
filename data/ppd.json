@@ -1,0 +1,17 @@
+{
+  "current_splits": {
+    "Audio": 0.0041,
+    "Video": 0.0019
+  },
+  "future_splits": {
+    "Audio Premium": 0.0052,
+    "Audio Ad Supported": 0.0011,
+    "Video Premium": 0.0027,
+    "Video Ad Supported": 0.0008,
+    "Spotify": 0.0044,
+    "Apple": 0.0071,
+    "YouTube": 0.0018,
+    "Amazon": 0.0052,
+    "TikTok": 0.0006
+  }
+}

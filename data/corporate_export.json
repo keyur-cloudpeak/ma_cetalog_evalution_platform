@@ -1,0 +1,24 @@
+{
+  "catalog_name": "CHI Records",
+  "local_territories": [
+    "Mexico",
+    "USA",
+    "Colombia"
+  ],
+  "total_tracks": 482,
+  "total_albums": 41,
+  "current_annual_revenue_usd": 16760000,
+  "local_revenue_usd": 4820000,
+  "row_revenue_usd": 11940000,
+  "catalog_age_split": {
+    "older_than_10y_pct": 75,
+    "recent_pct": 25
+  },
+  "yoy_growth_pct_2025": 14.0,
+  "market_growth_pct_2025": 14.0,
+  "artist_vs_market_index_pct": 243,
+  "expected_growth_pct": 8.0,
+  "expected_decay_pct": -6.0,
+  "average_new_track_streams_millions": 2.6,
+  "projected_next_album_streams_millions": 26.0
+}

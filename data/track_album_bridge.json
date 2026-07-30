@@ -1,0 +1,142 @@
+[
+  {
+    "track_id": "TRK001",
+    "album_id": "ALB002",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK001",
+    "album_id": "ALB007",
+    "is_primary": false
+  },
+  {
+    "track_id": "TRK002",
+    "album_id": "ALB014",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK003",
+    "album_id": "ALB010",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK003",
+    "album_id": "ALB008",
+    "is_primary": false
+  },
+  {
+    "track_id": "TRK004",
+    "album_id": "ALB001",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK005",
+    "album_id": "ALB002",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK006",
+    "album_id": "ALB007",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK006",
+    "album_id": "ALB014",
+    "is_primary": false
+  },
+  {
+    "track_id": "TRK007",
+    "album_id": "ALB003",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK008",
+    "album_id": "ALB011",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK009",
+    "album_id": "ALB010",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK009",
+    "album_id": "ALB007",
+    "is_primary": false
+  },
+  {
+    "track_id": "TRK010",
+    "album_id": "ALB003",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK011",
+    "album_id": "ALB015",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK011",
+    "album_id": "ALB009",
+    "is_primary": false
+  },
+  {
+    "track_id": "TRK012",
+    "album_id": "ALB011",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK013",
+    "album_id": "ALB004",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK014",
+    "album_id": "ALB007",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK014",
+    "album_id": "ALB008",
+    "is_primary": false
+  },
+  {
+    "track_id": "TRK015",
+    "album_id": "ALB015",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK016",
+    "album_id": "ALB004",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK017",
+    "album_id": "ALB015",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK018",
+    "album_id": "ALB005",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK018",
+    "album_id": "ALB008",
+    "is_primary": false
+  },
+  {
+    "track_id": "TRK019",
+    "album_id": "ALB012",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK020",
+    "album_id": "ALB006",
+    "is_primary": true
+  },
+  {
+    "track_id": "TRK020",
+    "album_id": "ALB009",
+    "is_primary": false
+  }
+]
