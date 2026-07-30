@@ -130,7 +130,24 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 0 0 1px rgba(227, 0, 15, 0.12);
+    }
+
+    .brand-logo svg {
+      width: 100%;
+      height: 100%;
     }
 
     .brand-mark {
@@ -1100,16 +1117,39 @@
 
     <header class="topbar">
       <div class="brand">
-        <div class="brand-mark">
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
+        <div class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 84 84" xmlns="http://www.w3.org/2000/svg">
+            <rect width="84" height="84" rx="22" fill="#fff"/>
+            <g fill="#E3000F">
+              <circle cx="34" cy="18" r="5"/>
+              <circle cx="42" cy="18" r="5"/>
+              <circle cx="50" cy="18" r="5"/>
+              <circle cx="26" cy="28" r="5"/>
+              <circle cx="34" cy="28" r="5"/>
+              <circle cx="42" cy="28" r="5"/>
+              <circle cx="50" cy="28" r="5"/>
+              <circle cx="58" cy="28" r="5"/>
+              <circle cx="18" cy="38" r="5"/>
+              <circle cx="26" cy="38" r="5"/>
+              <circle cx="34" cy="38" r="5"/>
+              <circle cx="42" cy="38" r="5"/>
+              <circle cx="50" cy="38" r="5"/>
+              <circle cx="58" cy="38" r="5"/>
+              <circle cx="66" cy="38" r="5"/>
+              <circle cx="26" cy="50" r="5"/>
+              <circle cx="34" cy="50" r="5"/>
+              <circle cx="42" cy="50" r="5"/>
+              <circle cx="50" cy="50" r="5"/>
+              <circle cx="58" cy="50" r="5"/>
+              <circle cx="34" cy="60" r="5"/>
+              <circle cx="42" cy="60" r="5"/>
+              <circle cx="50" cy="60" r="5"/>
+            </g>
+          </svg>
         </div>
         <div class="brand-text">
           <div class="brand-name">SONY MUSIC</div>
-          <div class="brand-sub">M&amp;A PLATEFORM</div>
+          <div class="brand-sub">M&amp;A PLATFORM</div>
         </div>
       </div>
       <button class="theme-toggle" id="themeToggle">
@@ -1119,7 +1159,6 @@
     </header>
 
     <div class="meta-row">
-      <div>SONY MUSIC LATIN &middot; CATALOG VALUATION INTELLIGENCE</div>
       <div class="meta-right">
         <span id="todayDate">2026-07-30</span>
         <span class="dot-sep">&bull;</span>
@@ -1127,7 +1166,7 @@
       </div>
     </div>
 
-    <h1 class="headline">M&amp;A CATALOG</br> <em>EVALUATION</em> PLATEFORM</h1>
+    <h1 class="headline">M&amp;A CATALOG <em>EVALUATION</em> PLATFORM</h1>
     <p class="sub-headline">Interactive analyst prototype &mdash; identify a catalog, resolve ambiguity, map
       territories, and generate corporate-ready valuation inputs. All figures are illustrative dummy data.</p>
 
