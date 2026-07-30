@@ -6,7 +6,8 @@
     "is_compilation": false,
     "release_year": 2010,
     "track_count": 1,
-    "current_revenue_usd": 724484.89
+    "current_revenue_usd": 724484.89,
+    "total_consumption_streams": 802531
   },
   {
     "album_id": "ALB002",
@@ -15,7 +16,8 @@
     "is_compilation": false,
     "release_year": 2005,
     "track_count": 14,
-    "current_revenue_usd": 333134.23
+    "current_revenue_usd": 333134.23,
+    "total_consumption_streams": 11235435
   },
   {
     "album_id": "ALB003",
@@ -24,7 +26,8 @@
     "is_compilation": false,
     "release_year": 2005,
     "track_count": 7,
-    "current_revenue_usd": 909994.22
+    "current_revenue_usd": 909994.22,
+    "total_consumption_streams": 5617717
   },
   {
     "album_id": "ALB004",
@@ -33,7 +36,8 @@
     "is_compilation": false,
     "release_year": 2011,
     "track_count": 4,
-    "current_revenue_usd": 101717.36
+    "current_revenue_usd": 101717.36,
+    "total_consumption_streams": 3210124
   },
   {
     "album_id": "ALB005",
@@ -42,7 +46,8 @@
     "is_compilation": false,
     "release_year": 2002,
     "track_count": 12,
-    "current_revenue_usd": 807407.23
+    "current_revenue_usd": 807407.23,
+    "total_consumption_streams": 9630373
   },
   {
     "album_id": "ALB006",
@@ -51,7 +56,8 @@
     "is_compilation": false,
     "release_year": 2020,
     "track_count": 9,
-    "current_revenue_usd": 769664.94
+    "current_revenue_usd": 769664.94,
+    "total_consumption_streams": 32959974
   },
   {
     "album_id": "ALB007",
@@ -60,7 +66,8 @@
     "is_compilation": true,
     "release_year": 2023,
     "track_count": 15,
-    "current_revenue_usd": 516373.27
+    "current_revenue_usd": 516373.27,
+    "total_consumption_streams": 53182564
   },
   {
     "album_id": "ALB008",
@@ -69,7 +76,8 @@
     "is_compilation": true,
     "release_year": 2014,
     "track_count": 3,
-    "current_revenue_usd": 531157.99
+    "current_revenue_usd": 531157.99,
+    "total_consumption_streams": 2407593
   },
   {
     "album_id": "ALB009",
@@ -78,7 +86,8 @@
     "is_compilation": true,
     "release_year": 2022,
     "track_count": 12,
-    "current_revenue_usd": 554824.26
+    "current_revenue_usd": 554824.26,
+    "total_consumption_streams": 40711941
   },
   {
     "album_id": "ALB010",
@@ -87,7 +96,8 @@
     "is_compilation": false,
     "release_year": 2023,
     "track_count": 1,
-    "current_revenue_usd": 80034.06
+    "current_revenue_usd": 80034.06,
+    "total_consumption_streams": 3545504
   },
   {
     "album_id": "ALB011",
@@ -96,7 +106,8 @@
     "is_compilation": false,
     "release_year": 2022,
     "track_count": 1,
-    "current_revenue_usd": 228084.89
+    "current_revenue_usd": 228084.89,
+    "total_consumption_streams": 3392662
   },
   {
     "album_id": "ALB012",
@@ -105,7 +116,8 @@
     "is_compilation": false,
     "release_year": 2010,
     "track_count": 3,
-    "current_revenue_usd": 814722.07
+    "current_revenue_usd": 814722.07,
+    "total_consumption_streams": 2407593
   },
   {
     "album_id": "ALB013",
@@ -114,7 +126,8 @@
     "is_compilation": false,
     "release_year": 2002,
     "track_count": 1,
-    "current_revenue_usd": 370418.02
+    "current_revenue_usd": 370418.02,
+    "total_consumption_streams": 802531
   },
   {
     "album_id": "ALB014",
@@ -123,7 +136,8 @@
     "is_compilation": true,
     "release_year": 2016,
     "track_count": 12,
-    "current_revenue_usd": 167081.58
+    "current_revenue_usd": 167081.58,
+    "total_consumption_streams": 63887554
   },
   {
     "album_id": "ALB015",
@@ -132,6 +146,7 @@
     "is_compilation": false,
     "release_year": 2011,
     "track_count": 1,
-    "current_revenue_usd": 210889.07
+    "current_revenue_usd": 210889.07,
+    "total_consumption_streams": 802531
   }
 ]

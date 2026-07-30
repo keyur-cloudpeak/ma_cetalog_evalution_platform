@@ -1659,35 +1659,51 @@
       const albumsWithStatus = DATA.albums.map(a => Object.assign({}, a, { Status: state.includedAlbums[a.album_id] ? "Include" : "Exclude" }));
       const view = filter === "All" ? albumsWithStatus : albumsWithStatus.filter(a => a.Status === filter);
 
-      const rows = view.map(a => `<td class="strong">${esc(a.album_name)}</td><td>${esc(a.release_type)}</td><td class="num">${a.release_year}</td><td class="num">${a.track_count}</td><td class="num">${fmtUSD(a.current_revenue_usd)}</td><td>${a.Status === "Include" ? tag("Include", "green") : tag("Exclude", "red")}</td>`);
+      const rows = view.map(a => `<td class="strong">${esc(a.album_name)}</td><td>${esc(a.release_type)}</td><td class="num">${a.release_year}</td><td class="num">${a.track_count}</td><td class="num">${fmtNum(a.total_consumption_streams || 0)}</td><td class="num">${fmtUSD(a.current_revenue_usd)}</td><td>${a.Status === "Include" ? tag("Include", "green") : tag("Exclude", "red")}</td>`);
 
       const included = albumsWithStatus.filter(a => a.Status === "Include");
       const totalTracks = included.reduce((s, a) => s + a.track_count, 0);
       const totalRevenue = included.reduce((s, a) => s + a.current_revenue_usd, 0);
+      const totalConsumption = included.reduce((s, a) => s + (a.total_consumption_streams || 0), 0);
 
-      const sortedInc = included.slice().sort((a, b) => a.current_revenue_usd - b.current_revenue_usd);
+      const albumChartTab = state.albumChartTab || 0;
+      const sortedInc = included.slice().sort((a, b) => albumChartTab === 1
+        ? (a.total_consumption_streams || 0) - (b.total_consumption_streams || 0)
+        : a.current_revenue_usd - b.current_revenue_usd);
+
+      const chartTabs = ["Revenue", "Consumption"];
+      const chartTabsHtml = chartTabs.map((tb, i) =>
+        `<button class="subtab ${i === albumChartTab ? "active" : ""}" onclick="setAlbumChartTab(${i})">${tb}</button>`
+      ).join("");
+
+      const chart = albumChartTab === 1
+        ? hBarChart(sortedInc.map(a => a.album_name), sortedInc.map(a => a.total_consumption_streams || 0), "#2A63C7", { valueFormatter: v => (v / 1e6).toFixed(1) + "M", height: Math.max(320, sortedInc.length * 36 + 60) })
+        : hBarChart(sortedInc.map(a => a.album_name), sortedInc.map(a => a.current_revenue_usd), "#E1261C", { valueFormatter: v => "$" + (v / 1000).toFixed(0) + "K", height: Math.max(320, sortedInc.length * 36 + 60) });
 
       return `
     ${stepMeta(7, "Album Analysis")}
-    ${sectionTitle("Album Analysis", "Albums, release year, track count, and current revenue for the resolved catalog.")}
+    ${sectionTitle("Album Analysis", "Albums, release year, track count, total consumption (by release year bucket), and current revenue for the resolved catalog.")}
     <div class="field" style="max-width:220px;">
       <label class="field-label">Filter</label>
       <select onchange="setAlbumFilter(this.value)">
         ${["All", "Include", "Exclude"].map(f => `<option ${f === filter ? "selected" : ""}>${f}</option>`).join("")}
       </select>
     </div>
-    ${table(["Album", "Release Type", "Release Year", "Track Count", "Current Revenue (USD)", "Status"], rows, { scroll: true })}
-    <div class="grid grid-3" style="margin-top:16px;">
+    ${table(["Album", "Release Type", "Release Year", "Track Count", "Total Consumption (Streams)", "Current Revenue (USD)", "Status"], rows, { scroll: true })}
+    <div class="grid grid-4" style="margin-top:16px;">
       ${kpiCard("Albums in Scope", included.length)}
       ${kpiCard("Total Tracks", fmtNum(totalTracks))}
+      ${kpiCard("Total Consumption", fmtNum(totalConsumption) + " streams")}
       ${kpiCard("Total Current Revenue", fmtUSD(totalRevenue))}
     </div>
-    ${sectionTitle("Current Revenue by Album (Included)")}
-    ${hBarChart(sortedInc.map(a => a.album_name), sortedInc.map(a => a.current_revenue_usd), "#E1261C", { valueFormatter: v => "$" + (v / 1000).toFixed(0) + "K", height: Math.max(320, sortedInc.length * 36 + 60) })}
+    ${sectionTitle("Album Analysis Chart (Included)")}
+    <div class="subtabs">${chartTabsHtml}</div>
+    ${chart}
     ${navButtons()}
   `;
     }
     function setAlbumFilter(v) { state.albumFilter = v; render(); }
+    function setAlbumChartTab(i) { state.albumChartTab = i; render(); }
 
     /* ---- SCREEN 8 : NEW RELEASE FORECAST ---- */
     function renderScreen8() {

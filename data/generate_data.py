@@ -105,9 +105,8 @@ for i, name in enumerate(album_names, start=1):
         "release_year": year,
         "track_count": track_count,
         "current_revenue_usd": round(random.uniform(15000, 950000), 2),
+        "total_consumption_streams": 0,  # will be populated after release_year_analysis
     })
-with open(OUT / "albums.json", "w") as f:
-    json.dump(albums, f, indent=2)
 
 track_first_names = ["Hips Don't Lie", "Waka Waka", "Te Felicito", "Chantaje", "La Tortura",
                       "Ojos Asi", "Loba", "Rabiosa", "Antologia", "Suerte", "Underneath Your Clothes",
@@ -157,6 +156,49 @@ for b in buckets:
     })
 with open(OUT / "release_year_analysis.json", "w") as f:
     json.dump(release_year_analysis, f, indent=2)
+
+# ---------------------------------------------------------------------------
+# Back-populate albums with total_consumption_streams from release_year_analysis
+# Map each album's release_year to its bucket, then distribute bucket streams
+# proportionally by track_count among all albums in that bucket.
+# ---------------------------------------------------------------------------
+current_year = 2025
+
+def year_to_bucket(y):
+    age = current_year - y
+    if age > 10:
+        return "Older than 10 years"
+    elif 2017 <= y <= 2020:
+        return "2017-2020"
+    elif y == 2021:
+        return "2021"
+    elif y == 2022:
+        return "2022"
+    elif y == 2023:
+        return "2023"
+    elif y == 2024:
+        return "2024"
+    else:
+        return "2025"
+
+bucket_map = {r["bucket"]: r["consumption_streams"] for r in release_year_analysis}
+
+# Group albums by bucket, summing their track_counts
+from collections import defaultdict
+bucket_tracks = defaultdict(int)
+for a in albums:
+    bucket_tracks[year_to_bucket(a["release_year"])] += a["track_count"]
+
+# Assign consumption proportionally (track_count / bucket_total_tracks * bucket_streams)
+for a in albums:
+    b = year_to_bucket(a["release_year"])
+    bucket_total = bucket_tracks[b] or 1
+    bucket_streams = bucket_map.get(b, 0)
+    share = round(bucket_streams * a["track_count"] / bucket_total)
+    a["total_consumption_streams"] = share
+
+with open(OUT / "albums.json", "w") as f:
+    json.dump(albums, f, indent=2)
 
 # Catalog age split (older than 10y vs recent)
 catalog_age_split = {
