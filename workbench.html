@@ -1543,7 +1543,7 @@
       const albumRows = filteredAlbums.map(a => {
         const inc = !!state.includedAlbums[a.album_id];
         return `<td><input type="checkbox" class="row-check" ${inc ? "checked" : ""} onchange="toggleAlbumInclude('${a.album_id}', this.checked)"></td>
-      <td class="strong">${esc(a.album_name)}</td><td style="font-family: var(--font-mono); font-size: 0.85em;">${esc(a.isrc || '-')}</td><td>${esc(a.release_type)}</td><td class="num">${a.release_year}</td>
+      <td class="strong">${esc(a.album_name)}</td><td>${esc(a.release_type)}</td><td class="num">${a.release_year}</td>
       <td class="num">${a.track_count}</td><td class="num">${fmtUSD(a.current_revenue_usd)}</td>`;
       });
 
@@ -1554,7 +1554,7 @@
       <label class="field-label">Search by Album or ISRC</label>
       <input id="metadataSearchInput" type="text" placeholder="Type to filter..." value="${esc(state.metadataSearch)}" oninput="setMetadataSearch(this.value)" style="width: 100%; max-width: 400px; padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
     </div>
-    ${table(["Include", "Album", "ISRC", "Release Type", "Release Year", "Tracks", "Current Revenue (USD)"], albumRows, { scroll: true })}
+    ${table(["Include", "Album", "Release Type", "Release Year", "Tracks", "Current Revenue (USD)"], albumRows, { scroll: true })}
     ${navButtons()}
   `;
     }
