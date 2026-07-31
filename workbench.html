@@ -127,6 +127,40 @@
       border-bottom: 1.5px solid var(--text);
     }
 
+    .topbar-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex: 1;
+      margin: 0 20px;
+    }
+
+    .topbar-title {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 1.8rem;
+      letter-spacing: -0.015em;
+      color: #c51616cf;
+      margin-bottom: 0px;
+      line-height: 1.1;
+    }
+
+    .topbar-title em {
+      font-style: normal;
+      font-weight: 700;
+      color: var(--text-dim);
+    }
+
+    .topbar-desc {
+      font-family: var(--font-sans);
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      line-height: 1.5;
+      max-width: 925px;
+    }
+
     .brand {
       display: flex;
       align-items: center;
@@ -1049,6 +1083,12 @@
           <div class="brand-sub">LATIN</div>
         </div>
       </div>
+      <div class="topbar-center">
+        <div class="topbar-title">M&amp;A CATALOG <em>VALUATION</em> PLATFORM</div>
+        <div class="topbar-desc">An intelligent solution that identifies music catalogues, resolves artist and catalogue
+          ambiguities, maps ownership and distribution territories, and generates decision-ready valuation insights.
+        </div>
+      </div>
       <button class="theme-toggle" id="themeToggle">
         <span id="themeLabel">LIGHT</span>
         <span class="toggle-track"><span class="toggle-thumb" id="toggleThumb"></span></span>
@@ -1056,10 +1096,6 @@
     </header>
 
     <nav class="tabbar" id="tabbar"></nav>
-
-    <h1 class="headline">M&amp;A CATALOG <em>VALUATION</em> PLATFORM</h1>
-    <p class="sub-headline">An intelligent solution that identifies music catalogues, resolves artist and catalogue
-      ambiguities, maps ownership and distribution territories, and generates decision-ready valuation insights.</p>
 
     <main id="screenRoot"></main>
 
