@@ -1513,7 +1513,7 @@
       let searchField = "";
       if (mode === "Artist") {
         const artistList = DATA.catalog_options.artists;
-        searchField = `<div class="field"><label class="field-label" style="text-align:left;">Artist Name</label>
+        searchField = `<div class="field"><label class="field-label" style="text-align:left; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; font-size: 0.75rem; margin-bottom: 12px; color: var(--text-mute);">Artist Name</label>
       <div class="autocomplete-wrap" id="acWrapArtist">
         <input type="text" id="searchTermSel" value="${esc(state.searchTerm)}" placeholder="Type to search artists..." autocomplete="off"
           oninput="acFilter('acWrapArtist','acListArtist','searchTermSel',dispatchSearch)"
@@ -1527,7 +1527,7 @@
     </div>`;
       } else if (mode === "Label") {
         const labelList = DATA.catalog_options.labels;
-        searchField = `<div class="field"><label class="field-label" style="text-align:left;">Label Name</label>
+        searchField = `<div class="field"><label class="field-label" style="text-align:left; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; font-size: 0.75rem; margin-bottom: 12px; color: var(--text-mute);">Label Name</label>
       <div class="autocomplete-wrap" id="acWrapLabel">
         <input type="text" id="searchTermSel" value="${esc(state.searchTerm)}" placeholder="Type to search labels..." autocomplete="off"
           oninput="acFilter('acWrapLabel','acListLabel','searchTermSel',dispatchSearch)"
@@ -1540,15 +1540,20 @@
       </div>
     </div>`;
       } else {
-        searchField = `<div class="field"><label class="field-label">Upload ISRC List (Excel / CSV)</label>
-      <div class="upload-box" onclick="document.getElementById('isrcFile').click()">
-        ${state.uploadedFile ? "&#128190; " + esc(state.uploadedFile) : "&#8593; Click to choose a file, or drag one here"}
+        searchField = `<div class="field"><label class="field-label" style="text-align:left; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; font-size: 0.75rem; margin-bottom: 12px; color: var(--text-mute);">UPLOAD ISRC LIST (EXCEL / CSV)</label>
+      <div class="upload-box" onclick="document.getElementById('isrcFile').click()" style="background: transparent;">
+        ${state.uploadedFile ? "&#128190; " + esc(state.uploadedFile) : "<span style='font-size: 1.2rem; margin-bottom: 12px; display: inline-block;'>&#8593;</span><br>Click to choose a file, or drag one here"}
       </div>
       <input type="file" id="isrcFile" accept=".xlsx,.csv" style="display:none" onchange="onIsrcUpload(this)">
-      <div class="hint">Expected column: <b>ISRC</b> &mdash; one code per row.</div>
-      ${state.uploadedFile ? `<div class="notice success">Loaded file: <b>${esc(state.uploadedFile)}</b> (dummy parse &mdash; 214 ISRCs detected)</div>` : ""}
+      <div class="hint" style="text-align: left; margin-top: 16px; font-size: 0.85rem; color: var(--text-mute);">Expected column: <b>ISRC</b> &mdash; one code per row.</div>
+      ${state.uploadedFile ? `<div class="notice success" style="text-align: left;">Loaded file: <b>${esc(state.uploadedFile)}</b> (dummy parse &mdash; 214 ISRCs detected)</div>` : ""}
     </div>`;
       }
+
+      // Next is allowed only when the user has provided a search value
+      const screen1CanNext = mode === "ISRC List"
+        ? !!state.uploadedFile
+        : !!(state.searchTerm && state.searchTerm.trim());
 
       const objectives = [
         ["Catalog Acquisition", "Which albums & tracks belong to the deal?"],
@@ -1557,27 +1562,31 @@
         ["Corporate Valuation", "Inputs for the Corporate model"],
       ];
 
-      // Next is allowed only when the user has provided a search value
-      const screen1CanNext = mode === "ISRC List"
-        ? !!state.uploadedFile
-        : !!(state.searchTerm && state.searchTerm.trim());
-
       return `
-    ${stepMeta(1, "Select Catalog")}
-    ${sectionTitle("Select Catalog", "Identify the catalog to be evaluated by artist, label, or an uploaded ISRC list.")}
-    <div class="field">
-      <label class="field-label">Search By</label>
-      <div class="radio-row" id="searchModeRow">
-        ${["Artist", "Label", "ISRC List"].map(m => `<div class="radio-opt ${m === mode ? "sel" : ""}" onclick="setSearchMode('${m}')">${m}</div>`).join("")}
+    <div style="border-radius: var(--radius-l); padding: 60px 40px; max-width: 800px; margin: 40px auto 60px auto; text-align: center; box-shadow: var(--shadow);">
+      <div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 12px;">
+        <div style="width: 4px; height: 28px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); border-radius: 3px;"></div>
+        <div style="font-family: var(--font-serif); font-weight: 800; font-size: 1.8rem; letter-spacing: -0.01em; color: var(--text);">Select Catalog</div>
+      </div>
+      <div style="font-family: var(--font-sans); color: var(--text-mute); font-size: 0.95rem; margin-bottom: 40px;">Identify the catalog to be evaluated by artist, label, or an uploaded ISRC list.</div>
+      
+      <div class="field" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 40px;">
+        <label class="field-label" style="text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; font-size: 0.75rem; margin-bottom: 16px; color: var(--text-mute);">SEARCH BY</label>
+        <div class="radio-row" id="searchModeRow" style="justify-content: center; gap: 12px;">
+          ${["Artist", "Label", "ISRC List"].map(m => `<div class="radio-opt ${m === mode ? "sel" : ""}" onclick="setSearchMode('${m}')" style="font-size: 0.9rem; font-family: var(--font-sans); font-weight: 600; padding: 10px 24px; border-radius: 24px; ${m === mode ? 'background: var(--accent); border-color: var(--accent); color: #fff;' : 'background: transparent; border-color: var(--border-strong);'}">${m}</div>`).join("")}
+        </div>
+      </div>
+      
+      <div style="max-width: 520px; margin: 0 auto;">
+        ${searchField}
       </div>
     </div>
-    <div style="max-width: 640px; margin-top: 24px;">
-      ${searchField}
-    </div>
+
     ${sectionTitle("Business Objective Checklist")}
-    <div class="grid grid-4">
-      ${objectives.map(([t, d]) => `<div class="card"><div class="kpi-label">${esc(t)}</div><div class="card-body-text">${esc(d)}</div></div>`).join("")}
+    <div class="grid grid-4" style="margin-bottom: 40px;">
+      ${objectives.map(([t, d]) => `<div class="card"><div class="kpi-label" style="text-transform: uppercase; letter-spacing: 0.05em;">${esc(t)}</div><div class="card-body-text" style="margin-top: 8px;">${esc(d)}</div></div>`).join("")}
     </div>
+
     ${navButtons(!screen1CanNext)}
   `;
     }
