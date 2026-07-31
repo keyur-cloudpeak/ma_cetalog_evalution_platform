@@ -55,7 +55,7 @@
       --shadow: 0 10px 30px rgba(20, 18, 14, 0.08);
       --track-bg: #DAD7CC;
       --chip-bg: rgba(20, 18, 14, 0.045);
-      --scrollbar: rgba(225, 38, 28, 0.35);
+      --scrollbar: rgba(20, 18, 14, 0.32);
       --accent-contrast: #FFFFFF;
     }
 
@@ -73,7 +73,7 @@
       --shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
       --track-bg: #2A2A2A;
       --chip-bg: rgba(255, 255, 255, 0.05);
-      --scrollbar: rgba(225, 38, 28, 0.45);
+      --scrollbar: rgba(255, 255, 255, 0.18);
       --accent-contrast: #FFFFFF;
     }
 
@@ -169,10 +169,10 @@
 
     .brand-name {
       font-family: var(--font-mono);
-      font-weight: 500;
-      font-size: .62rem;
-      letter-spacing: .28em;
-      color: var(--text-mute);
+      font-weight: 600;
+      font-size: .8rem;
+      letter-spacing: .22em;
+      color: var(--text);
       padding-bottom: 5px;
       border-bottom: 1px solid var(--border-strong);
       margin-bottom: 4px;
@@ -180,10 +180,10 @@
 
     .brand-sub {
       font-family: var(--font-mono);
-      font-weight: 500;
-      font-size: .62rem;
-      letter-spacing: .28em;
-      color: var(--text-mute);
+      font-weight: 600;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      color: var(--text);
     }
 
     .theme-toggle {
@@ -264,7 +264,7 @@
       font-size: .95rem;
       line-height: 1.6;
       margin: 0 0 6px;
-      max-width: 860px;
+      max-width: 1300px;
     }
 
     /* ---------- TAB BAR ---------- */
@@ -293,7 +293,7 @@
       font-size: .72rem;
       font-weight: 700;
       letter-spacing: .05em;
-      padding: 9px 15px;
+      padding: 6px 8px;
       border-radius: 20px;
       border: 1.5px solid var(--text-dim);
       background: transparent;
@@ -831,7 +831,7 @@
     }
 
     .table-scroll::-webkit-scrollbar-thumb {
-      background: var(--accent);
+      background: var(--scrollbar);
       border-radius: 999px;
     }
 
@@ -1048,14 +1048,13 @@
       </button>
     </header>
 
+    <nav class="tabbar" id="tabbar"></nav>
+
     <h1 class="headline">M&amp;A CATALOG <em>EVALUATION</em> PLATFORM</h1>
     <p class="sub-headline">An intelligent solution designed to identify music catalogues,
       resolve artist and catalogue ambiguities, map ownership and distribution territories,
       and generate corporate-ready valuation inputs. The prototype streamlines catalog analysis
       by transforming complex rights and metadata into structured, decision-ready insights.</p>
-
-
-    <nav class="tabbar" id="tabbar"></nav>
 
     <main id="screenRoot"></main>
 
