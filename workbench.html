@@ -645,11 +645,87 @@
       display: block;
     }
 
-    datalist,
-    option {
-      background-color: var(--surface);
-      color: var(--text);
+    /* ---------- CUSTOM AUTOCOMPLETE ---------- */
+    .autocomplete-wrap {
+      position: relative;
+      width: 100%;
     }
+
+    .autocomplete-wrap input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .autocomplete-list {
+      display: none;
+      position: absolute;
+      top: calc(100% + 6px);
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: var(--surface);
+      border: 1.5px solid var(--accent);
+      border-radius: var(--radius-m);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14);
+      max-height: 260px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    .autocomplete-list.open {
+      display: block;
+    }
+
+    .autocomplete-item {
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      color: var(--text);
+      padding: 11px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s, color 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .autocomplete-item:last-child {
+      border-bottom: none;
+    }
+
+    .autocomplete-item:hover,
+    .autocomplete-item.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .autocomplete-item .ac-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .autocomplete-item strong {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .ac-no-result {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      color: var(--text-mute);
+      padding: 14px 16px;
+      text-align: center;
+    }
+
 
     select,
     input[type="text"],
@@ -665,6 +741,18 @@
       padding: 10px 12px;
       width: 100%;
       transition: .2s;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23999999%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 10px;
+      padding-right: 32px;
+      cursor: pointer;
     }
 
     select:focus,
@@ -1424,16 +1512,32 @@
       const mode = state.searchMode;
       let searchField = "";
       if (mode === "Artist") {
-        const opts = DATA.catalog_options.artists.map(a => `<option value="${esc(a)}"></option>`).join("");
+        const artistList = DATA.catalog_options.artists;
         searchField = `<div class="field"><label class="field-label" style="text-align:left;">Artist Name</label>
-      <input type="text" id="searchTermSel" list="artistList" value="${esc(state.searchTerm)}" placeholder="Type to search artists..." autocomplete="off" oninput="dispatchSearch()" onchange="dispatchSearch()" style="font-size:1.15rem; padding:14px; border-radius:12px;">
-      <datalist id="artistList">${opts}</datalist>
+      <div class="autocomplete-wrap" id="acWrapArtist">
+        <input type="text" id="searchTermSel" value="${esc(state.searchTerm)}" placeholder="Type to search artists..." autocomplete="off"
+          oninput="acFilter('acWrapArtist','acListArtist','searchTermSel',dispatchSearch)"
+          onclick="acToggle('acListArtist')"
+          onkeydown="acKeyNav(event,'acListArtist','searchTermSel',dispatchSearch)"
+          style="font-size:1.15rem; padding:14px; border-radius:12px;">
+        <div class="autocomplete-list" id="acListArtist">
+          ${artistList.map(a => `<div class="autocomplete-item" onmousedown="acSelect('searchTermSel','acListArtist','${esc(a).replace(/'/g, "\\'")}',dispatchSearch)"><span class="ac-icon">${esc(a)[0]}</span>${esc(a)}</div>`).join('')}
+        </div>
+      </div>
     </div>`;
       } else if (mode === "Label") {
-        const opts = DATA.catalog_options.labels.map(a => `<option value="${esc(a)}"></option>`).join("");
+        const labelList = DATA.catalog_options.labels;
         searchField = `<div class="field"><label class="field-label" style="text-align:left;">Label Name</label>
-      <input type="text" id="searchTermSel" list="labelList" value="${esc(state.searchTerm)}" placeholder="Type to search labels..." autocomplete="off" oninput="dispatchSearch()" onchange="dispatchSearch()" style="font-size:1.15rem; padding:14px; border-radius:12px;">
-      <datalist id="labelList">${opts}</datalist>
+      <div class="autocomplete-wrap" id="acWrapLabel">
+        <input type="text" id="searchTermSel" value="${esc(state.searchTerm)}" placeholder="Type to search labels..." autocomplete="off"
+          oninput="acFilter('acWrapLabel','acListLabel','searchTermSel',dispatchSearch)"
+          onclick="acToggle('acListLabel')"
+          onkeydown="acKeyNav(event,'acListLabel','searchTermSel',dispatchSearch)"
+          style="font-size:1.15rem; padding:14px; border-radius:12px;">
+        <div class="autocomplete-list" id="acListLabel">
+          ${labelList.map(a => `<div class="autocomplete-item" onmousedown="acSelect('searchTermSel','acListLabel','${esc(a).replace(/'/g, "\\'")}',dispatchSearch)"><span class="ac-icon">${esc(a)[0]}</span>${esc(a)}</div>`).join('')}
+        </div>
+      </div>
     </div>`;
       } else {
         searchField = `<div class="field"><label class="field-label">Upload ISRC List (Excel / CSV)</label>
@@ -1485,6 +1589,94 @@
         render();
       }
     }
+    /* ---- CUSTOM AUTOCOMPLETE HELPERS ---- */
+    function acOpen(listId) {
+      const list = document.getElementById(listId);
+      if (list) list.classList.add('open');
+    }
+    function acClose(listId) {
+      const list = document.getElementById(listId);
+      if (list) list.classList.remove('open');
+    }
+    function acToggle(listId) {
+      const list = document.getElementById(listId);
+      if (!list) return;
+      if (list.classList.contains('open')) {
+        list.classList.remove('open');  // 2nd click → close
+      } else {
+        list.classList.add('open');     // 1st click → open
+      }
+    }
+    function acFilter(wrapId, listId, inputId, callback) {
+      const input = document.getElementById(inputId);
+      const list = document.getElementById(listId);
+      if (!input || !list) return;
+      const q = input.value.toLowerCase().trim();
+      const items = list.querySelectorAll('.autocomplete-item');
+      let anyVisible = false;
+      items.forEach(item => {
+        const text = item.textContent.trim().toLowerCase();
+        const match = !q || text.includes(q);
+        item.style.display = match ? 'flex' : 'none';
+        if (match) anyVisible = true;
+      });
+      // show/hide no-result placeholder
+      let noRes = list.querySelector('.ac-no-result');
+      if (!anyVisible) {
+        if (!noRes) { noRes = document.createElement('div'); noRes.className = 'ac-no-result'; list.appendChild(noRes); }
+        noRes.textContent = 'No matches found';
+        noRes.style.display = 'block';
+      } else if (noRes) {
+        noRes.style.display = 'none';
+      }
+      list.classList.add('open');
+      if (callback) callback();
+    }
+    function acSelect(inputId, listId, value, callback) {
+      const input = document.getElementById(inputId);
+      if (input) { input.value = value; }
+      acClose(listId);
+      if (callback) callback();
+    }
+    function acKeyNav(event, listId, inputId, callback) {
+      const list = document.getElementById(listId);
+      if (!list || !list.classList.contains('open')) return;
+      const items = [...list.querySelectorAll('.autocomplete-item')].filter(i => i.style.display !== 'none');
+      const active = list.querySelector('.autocomplete-item.active');
+      let idx = items.indexOf(active);
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        if (active) active.classList.remove('active');
+        idx = (idx + 1) % items.length;
+        items[idx] && items[idx].classList.add('active');
+        items[idx] && items[idx].scrollIntoView({ block: 'nearest' });
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (active) active.classList.remove('active');
+        idx = (idx - 1 + items.length) % items.length;
+        items[idx] && items[idx].classList.add('active');
+        items[idx] && items[idx].scrollIntoView({ block: 'nearest' });
+      } else if (event.key === 'Enter') {
+        if (active) {
+          event.preventDefault();
+          const input = document.getElementById(inputId);
+          if (input) input.value = active.textContent.trim();
+          acClose(listId);
+          if (callback) callback();
+        }
+      } else if (event.key === 'Escape') {
+        acClose(listId);
+      }
+    }
+    // Close autocomplete when clicking outside
+    document.addEventListener('click', function (e) {
+      ['acListArtist', 'acListLabel'].forEach(id => {
+        const list = document.getElementById(id);
+        const wrap = list && list.closest('.autocomplete-wrap');
+        if (list && wrap && !wrap.contains(e.target)) acClose(id);
+      });
+    });
+
     function dispatchSearch() {
       const sel = document.getElementById("searchTermSel");
       if (sel) state.searchTerm = sel.value;
