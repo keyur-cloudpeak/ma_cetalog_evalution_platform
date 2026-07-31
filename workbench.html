@@ -1317,7 +1317,7 @@
     /* Vertical bar chart: 1-2 series, grouped or stacked */
     function vBarChart(categories, series, opts) {
       opts = opts || {};
-      const W = 880, H = opts.height || 340;
+      const W = 880, H = opts.height || 220;
       const padL = 58, padR = 16, padT = 16, padB = 44;
       const plotW = W - padL - padR, plotH = H - padT - padB;
       const stacked = !!opts.stacked;
@@ -1887,14 +1887,16 @@
       const tabs = ["Consumption", "Revenue", "Growth"];
       const t = state.revenueTab;
       let chart = "";
-      if (t === 0) chart = vBarChart(buckets, [{ name: "Streams", color: "#E1261C", data: ry.map(r => r.consumption_streams) }], { valueFormatter: v => (v / 1e6).toFixed(0) + "M" });
-      else if (t === 1) chart = vBarChart(buckets, [{ name: "Revenue", color: "#2A63C7", data: ry.map(r => r.revenue_usd) }], { valueFormatter: v => "$" + (v / 1000).toFixed(0) + "K" });
-      else chart = vBarChart(buckets, [{ name: "YoY Growth %", color: "#1E9E5A", data: ry.map(r => r.yoy_growth_pct) }], { valueFormatter: v => v.toFixed(0) + "%" });
+      if (t === 0) chart = vBarChart(buckets, [{ name: "Streams", color: "#E1261C", data: ry.map(r => r.consumption_streams) }], { valueFormatter: v => (v / 1e6).toFixed(0) + "M", height: 220 });
+      else if (t === 1) chart = vBarChart(buckets, [{ name: "Revenue", color: "#2A63C7", data: ry.map(r => r.revenue_usd) }], { valueFormatter: v => "$" + (v / 1000).toFixed(0) + "K", height: 220 });
+      else chart = vBarChart(buckets, [{ name: "YoY Growth %", color: "#1E9E5A", data: ry.map(r => r.yoy_growth_pct) }], { valueFormatter: v => v.toFixed(0) + "%", height: 220 });
 
       const rows = ry.map(r => `<td class="strong">${esc(r.bucket)}</td><td class="num">${fmtNum(r.consumption_streams)}</td><td class="num">${fmtUSD(r.revenue_usd)}</td><td class="num">${r.yoy_growth_pct}%</td>`);
 
-      const ppdCurrent = Object.entries(DATA.ppd.current_splits).map(([k, v]) => `<td class="strong">${esc(k)}</td><td class="num">${fmtUSD4(v)}</td>`);
-      const ppdFuture = Object.entries(DATA.ppd.future_splits).map(([k, v]) => `<td class="strong">${esc(k)}</td><td class="num">${fmtUSD4(v)}</td>`);
+      const ppdRows = [
+        ...Object.entries(DATA.ppd.current_splits).map(([k, v]) => `<td>Current</td><td class="strong">${esc(k)}</td><td class="num">${fmtUSD4(v)}</td>`),
+        ...Object.entries(DATA.ppd.future_splits).map(([k, v]) => `<td>Future-State</td><td class="strong">${esc(k)}</td><td class="num">${fmtUSD4(v)}</td>`)
+      ];
 
       return `
     ${stepMeta(6, "Release-Year Analysis & Revenue Conversion")}
@@ -1905,11 +1907,7 @@
     ${chart}
     ${table(["Release Year Bucket", "Consumption (Streams)", "Revenue (USD)", "YoY Growth %"], rows)}
 
-    ${sectionTitle("PPD Revenue Conversion", "Revenue \u00f7 Units = PPD (Per Play Dollar). Splits shown current vs future-state target.")}
-    <div class="grid grid-2">
-      <div><div class="kpi-label" style="margin-bottom:8px;">Current Splits</div>${table(["Segment", "PPD (USD)"], ppdCurrent)}</div>
-      <div><div class="kpi-label" style="margin-bottom:8px;">Future-State Splits</div>${table(["Segment", "PPD (USD)"], ppdFuture)}</div>
-    </div>
+    ${table(["Split Type", "Segment", "PPD (USD)"], ppdRows)}
 
     ${sectionTitle("Local / ROW Revenue Output")}
     <div class="grid grid-2">
@@ -1945,8 +1943,8 @@
       ).join("");
 
       const chart = albumChartTab === 1
-        ? hBarChart(sortedInc.map(a => a.album_name), sortedInc.map(a => a.total_consumption_streams || 0), "#2A63C7", { valueFormatter: v => (v / 1e6).toFixed(1) + "M", height: Math.max(320, sortedInc.length * 36 + 60) })
-        : hBarChart(sortedInc.map(a => a.album_name), sortedInc.map(a => a.current_revenue_usd), "#E1261C", { valueFormatter: v => "$" + (v / 1000).toFixed(0) + "K", height: Math.max(320, sortedInc.length * 36 + 60) });
+        ? hBarChart(sortedInc.map(a => a.album_name), sortedInc.map(a => a.total_consumption_streams || 0), "#2A63C7", { valueFormatter: v => (v / 1e6).toFixed(1) + "M", height: Math.max(200, sortedInc.length * 22 + 60) })
+        : hBarChart(sortedInc.map(a => a.album_name), sortedInc.map(a => a.current_revenue_usd), "#E1261C", { valueFormatter: v => "$" + (v / 1000).toFixed(0) + "K", height: Math.max(200, sortedInc.length * 22 + 60) });
 
       return `
     ${stepMeta(7, "Album Analysis")}
@@ -2014,7 +2012,7 @@
       <div class="kpi-value" style="font-size:1.4rem;">${state.projTracks} &times; ${avgStreams}M = <span style="color:var(--accent)">${projected}M streams</span></div>
     </div>
 
-    ${sortedActive.length ? hBarChart(sortedActive.map(d => d.track_name), sortedActive.map(d => d.first_12m_streams_millions), "#E1261C", { valueFormatter: v => v + "M", avgLine: avgStreams, avgLabel: avgStreams + "M", height: Math.max(300, sortedActive.length * 34 + 70) }) : `<div class="notice info">No tracks remain in the benchmark set.</div>`}
+    ${sortedActive.length ? hBarChart(sortedActive.map(d => d.track_name), sortedActive.map(d => d.first_12m_streams_millions), "#E1261C", { valueFormatter: v => v + "M", avgLine: avgStreams, avgLabel: avgStreams + "M", height: Math.max(180, sortedActive.length * 22 + 60) }) : `<div class="notice info">No tracks remain in the benchmark set.</div>`}
 
     ${sectionTitle("Decay Model — Phase 1 (Manual Analyst Input)", "Corporate and analysts do not fully agree on decay — Phase 1 shows historical growth only and lets the analyst enter assumptions manually. Phase 2 will add ARIMA / Prophet / regression forecasting.")}
     <div class="grid grid-2">
